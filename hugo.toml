@@ -1,0 +1,82 @@
+baseURL = 'https://joyceyeo.netlify.app'
+languageCode = 'en-us'
+title = 'Joyce Yeo'
+theme = 'typo'
+
+[module]
+[[module.imports]]
+path = "github.com/tomfran/typo"
+
+# Google analytics code
+# googleAnalytics = "G-xxxxxxxxx"
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+# Meta description
+description = "building scalable systems."
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'hey!'
+homeIntroContent = """
+I'm a software engineer working on large-scale distributed systems, dilettante in recreational mathematics. 
+I post a mix of tech and non-tech content.
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 10
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "Home"
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/joyceyeoshuhui/"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/pikulet"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "blog"
+url = "/posts"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
+
+# Giscus comments
+[params.giscus]
+enable = false
+repo = "pikulet/typo"
+repoid = "repoId"
+category = "General"
+categoryid = "categoryId"
+mapping = "pathname"
+theme = "preferred_color_scheme"
