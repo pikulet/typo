@@ -26,7 +26,10 @@ hideHeader = false
 homeIntroTitle = 'hey!'
 homeIntroContent = """
 I'm a software engineer working on large-scale distributed systems, and a dilettante in recreational mathematics. 
-I write about a mix of tech and non-tech content.
+
+Besides software development, I enjoy technical communication and write about a mix of tech and non-tech content [here](/posts).
+
+I've [made a few stuff](/projects) entirely for fun.
 """
 
 # Collection to display on home
@@ -62,10 +65,6 @@ url = "/"
 name = "blog"
 url = "/posts"
 
-[[params.menu]]
-name = "projects"
-url = "/projects"
-
 # Syntax highlight on code blocks
 [markup]
 [markup.highlight]
@@ -73,7 +72,7 @@ style = 'algol'
 
 # Giscus comments
 [params.giscus]
-enable = false
+enable = true
 repo = "pikulet/typo"
 repoid = "repoId"
 category = "General"
