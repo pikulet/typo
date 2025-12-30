@@ -1,6 +1,7 @@
 ---
 title: HTTP/2
-date: "2019-08-28"
+date: "2018-08-28"
+toc: true
 showTags: true
 slug: "http-2"
 tags:
@@ -9,6 +10,8 @@ summary: "Given the deluge of web requests made daily, what optimisations can be
 ---
 
 (scroll below for tldr photo)
+
+## New features of HTTP/2
 
 HTTP/2 is the successor version of HTTP1.1, as specified under RFC 7540 (May 2015). It was developed with optimising web requests in mind. Here are some new features it introduced:
 
@@ -55,5 +58,6 @@ Preparing this post led me on a journey to scour through the RFCs to really unde
 - [RFC 7540 (HTTP/2)](https://tools.ietf.org/html/rfc7540)
 - [RFC 7541 (HPACK)](https://tools.ietf.org/html/rfc7541)
 
+### cute pic
 A cute photo, and the inspiration behind this post:
 ![A cute photo summarising HTTP/2](/media/http-2-summary.jpg)

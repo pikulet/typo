@@ -1,12 +1,12 @@
 ---
-title: Traceroute using TCP
+title: Traceroute with TCP
 date: "2019-10-01"
 toc: true
 showTags: true
 slug: "tcp-traceroute"
 tags:
 - "networking"
-summary: "A hacky way to implement traceroute"
+summary: "Piecing together the path that our network packets take from source to destination"
 ---
 
 ## Traceroute?

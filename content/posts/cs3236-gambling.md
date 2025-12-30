@@ -5,7 +5,7 @@ toctoc: true
 showTags: true
 slug: "gambling-info-theory"
 tags:
-  - "information theory"
+- "information theory"
 summary: "Using an information-theoretic perspective to understand horse races"
 ---
 

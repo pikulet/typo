@@ -1,11 +1,11 @@
 ---
-title: Software-Defined Networking with Mininet and POX
+title: Software-Defined Networking
 date: "2019-12-18"
 showTags: true
 slug: "sdn-mininet-pox"
 tags:
 - "networking"
-summary: "A demonstration of programmable switches"
+summary: "A demonstration of SDN - programmable switches with Mininet and POX"
 ---
 
 Software-Defined Networking (SDN) is a buzzword in computer networks, but what does it actually mean? At its heart, SDN aims to redefine the Internet to suit modern uses.
@@ -18,7 +18,7 @@ In its current state, multiple RFCs are constantly being proposed, redefining wh
 
 The Internet, being complex, can be divided into a few layers. Some layers are responsible for getting a message across a single wire. Some are more complex, and are responsible for deciding how messages should be routed across the world. This complex layer is known as the *Network Layer*, and the dominant protocol used is the *Internet Protocol (IP)*.
 
-However, the problem is that the Network layer is responsible for too many things and doesn't leave a lot of room for customisation. As a result, SDN was conceptualised.
+However, the problem is that the **Network layer is responsible for too many things** and doesn't leave a lot of room for customisation. As a result, SDN was conceptualised.
 
 > SDN allows switches to be programmable.
 

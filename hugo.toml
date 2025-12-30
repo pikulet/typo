@@ -25,13 +25,13 @@ hideHeader = false
 # Intro on main page, content is markdown
 homeIntroTitle = 'hey!'
 homeIntroContent = """
-I'm a software engineer working on large-scale distributed systems, dilettante in recreational mathematics. 
-I post a mix of tech and non-tech content.
+I'm a software engineer working on large-scale distributed systems, and a dilettante in recreational mathematics. 
+I write about a mix of tech and non-tech content.
 """
 
 # Collection to display on home
 homeCollectionTitle = 'Posts'
-homeCollection = 'posts'
+# homeCollection = 'posts'
 
 # Lists parameters
 paginationSize = 10
@@ -42,7 +42,7 @@ listDateFormat = '2 Jan 2006'
 [params.breadcrumbs]
 enabled = true
 showCurrentPage = true
-home = "Home"
+home = "backend swe"
 
 # Social icons
 [[params.social]]

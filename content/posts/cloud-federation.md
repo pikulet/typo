@@ -6,7 +6,7 @@ showTags: true
 slug: "kubernetes-federation"
 tags:
 - "kubernetes"
-summary: "Multi-cluster orchestration"
+summary: "How can we effectively manage orchestrating resources to multiple kubernetes clusters?"
 ---
 
 ## Kubernetes clusters as an aggregation of resources

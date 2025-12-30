@@ -6,7 +6,7 @@ showTags: true
 slug: "kubernetes-descheduler"
 tags: 
 - "kubernetes"
-summary: "Using a de-scheduler to achieve balanced scheduling."
+summary: "Using a de-scheduler to achieve balanced scheduling"
 ---
 
 ## Why do we need balanced scheduling?

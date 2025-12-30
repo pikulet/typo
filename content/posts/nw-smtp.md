@@ -5,7 +5,7 @@ showTags: true
 slug: "smtp-ports"
 tags:
 - "networking"
-summary: "A quick look at the complicated story of SMTP ports"
+summary: "The story of unstandardised SMTP ports, and what this story says about the role of RFCs in global tech standardisation"
 ---
 
 The Simple Mail Transfer Protocol (SMTP) is used when users want to send mail to a mail server (which will eventually get delivered to the intended recipient). There are a few ports associated with SMTP, and I'd like to share the history of their evolution.

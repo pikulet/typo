@@ -1,12 +1,12 @@
 ---
-title: Pose Estimator Hackathon
+title: Pose Estimator
 date: "2019-06-26"
 toc: true
 showTags: true
 slug: "hackathon-cnn"
 tags: 
-- "ai"
-summary: "Training an image classfier to estimate people's poses."
+- "artificial intelligence"
+summary: "Hackathon edition. Training an image classfier to estimate people's poses. Is he supine or doing jumping jacks?"
 ---
 
 # DSTA AI Camp
@@ -45,6 +45,6 @@ While we were given AWS credits for this hackathon, we found it more useful to u
 
 ## Remarks
 
-Feel free to browse our final [presentation deck](/media/toothtable-ppt.pdf).
+Feel free to browse our final [presentation deck](/docs/toothtable-ppt.pdf).
 
 Pose estimation has many real-world uses. I would love to see a sign-language interpreter, which would help bridge the gap between the signing and speaking worlds.
