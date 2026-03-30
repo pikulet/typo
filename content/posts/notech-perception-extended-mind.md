@@ -1,7 +1,6 @@
 ---
 title: An Extended Mind (Andy Clark)
 date: "2020-10-19"
-toc: true
 showTags: true
 slug: "perception-extended-mind"
 category: "inquiry"
@@ -11,7 +10,7 @@ tags:
 summary: "What exactly constitutes the mind?"
 ---
 
-> This was a joint presentation with [Lynette C.](https://www.linkedin.com/in/lynette-chia-99260620b/?originalSubdomain=sg). This article is very relavant to computer scientists interested in how we represent AI.
+> This was a joint presentation with [Lynette C.](https://www.linkedin.com/in/lynette-chia-99260620b/?originalSubdomain=sg). This article is very relevant to computer scientists interested in how we represent knowledge in AI.
 
 In the previous week of class, we had learnt about how technological developments around us have changed the way we think. Examples of such technologies include timekeeping, writing and television. Andy Clark takes this claim a step further, claiming that **these technologies are integral to how we think**. 
 
@@ -29,7 +28,7 @@ Daily agent-environment interactions often **do not require the construction and
 
 Firstly, multiple experiments have shown how we often do not notice changes to unattended parts of our environment. A prime example would be the popular internet video of a "gorilla basketball" experiment. Participants are asked to count how many times the basketball is passed around during the video. Since all our attention is on the ball, we do not realise that a man dressed as a gorilla had walked across the screen.
 
-Secondly, researches have created a robot Herbert to collect soft drink cans. Herbert's programming did not involve any inner representation of the world. He was able to achieve his goal using the following routine:
+Secondly, researchers have created a robot Herbert to collect soft drink cans. Herbert's programming did not involve any inner representation of the world. He was able to achieve his goal using the following routine:
 
 - Detect obstacles --> he would halt and turn
 - Detect table --> scan for cans
@@ -51,11 +50,11 @@ Real-world actions may sometimes play an important role in the computational pro
 
 In this illusion, the image we are presented with gives an illusion of depth. However, we can simply move our bodies to the left or right and the illusion will disappear. Then, our **motion was part of the cognitive process of depth perception**.
 
-In the example of Herbert the robot earlier, Herbert would always rotate their body to face the drink can before picking it up. This motion allowed Herbert's picking up action to be more simplified, as the action is now deictically binded to having a drink can in front of it. Then, the motion is performing part of the cognitive work needed to pick the can up.
+In the example of Herbert the robot earlier, Herbert would always rotate its body to face the drink can before picking it up. This motion allowed Herbert's picking up action to be more simplified, as the action is now deictically bound to having a drink can in front of it. Then, the motion is performing part of the cognitive work needed to pick the can up.
 
 ## Wideware
 
-Now we now about the importance of action in neural representation. AI researchers have already successfully action-oriented such forms of mental encoding in robots. Maja Mataric once made a robot that navigated a maze, and the robot would encode landmarks in the maze using sensory input and its current direction of motion. 
+Now we know about the importance of action in neural representation. AI researchers have already successfully action-oriented such forms of mental encoding in robots. Maja Mataric once made a robot that navigated a maze, and the robot would encode landmarks in the maze using sensory input and its current direction of motion. 
 
 The question then arises - we represent the world in an action-oriented way. Do we then **think in an action-oriented way?**
 
@@ -65,7 +64,7 @@ The question then arises - we represent the world in an action-oriented way. Do 
 
 By having the option to write down something on a post-it, we free up some mental capacity to perform other sorts of computation. We can simply "write-down what's in our heads" because we have the ability to use language to symbolically represent our thoughts. 
 
-These external props are useful to us because they have **temporal and spatial stability**. If a post-it note could randomly disappear, we wouldn't write on it. Referring back to Deacon's work, wideware indexically represent our symbolic thoughts. 
+These external props are useful to us because they have **temporal and spatial stability**. If a post-it note could randomly disappear, we wouldn't write on it. Referring back to Deacon's work, wideware indexically represents our symbolic thoughts. 
 
 ### Example 2: We manipulate and think using our environment
 
@@ -75,7 +74,7 @@ Writing in a way has changed the types of cognitive tasks that we perform. We **
 
 ### Example 3: Action is cognition
 
-This whole article is on Clark's work and here's a video of him [discussing this very paper](https://www.youtube.com/watch?v=kc-TdMjuJRU). At about the minute mark, he starts talking about the example of people being injected with **botox**, which makes the facial muscles rigid (it's normally used to make people look younger). The participants were then presented with emotive sentences The study found that by not being able to make facial expressions (as we normally do in emotive sentences), participants were **slower to understand the sentences**.
+This whole article is on Clark's work and here's a video of him [discussing this very paper](https://www.youtube.com/watch?v=kc-TdMjuJRU). At about the minute mark, he starts talking about the example of people being injected with **botox**, which makes the facial muscles rigid (it's normally used to make people look younger). The participants were then presented with emotive sentences. The study found that by not being able to make facial expressions (as we normally do in emotive sentences), participants were **slower to understand the sentences**.
 
 By not being able to act, participants were not able to think. (This really puts a new twist on what it means to act before you think.)
 
@@ -83,20 +82,20 @@ By not being able to act, participants were not able to think. (This really puts
 
 The biological build of a bluefin tuna does not explain how it is able to swim so well. Researchers finally cracked this puzzle when they studied bluefin tuna in their natural environment. It is now known that **bluefin tuna make use of the eddies and vortices in the water to gain speed**. Then, the real swimming machine is not the bluefin tuna, but the bluefin tuna in its proper environment. 
 
-The mind is an essentially **situated** brain: a brain at home in its proper bodily, cultural and environmental niche
+The mind is an essentially **situated** brain: a brain at home in its proper bodily, cultural and environmental niche.
 
 ## Extended Mind Theory
 
 With wideware, there is an **active externalism of the mind**, as we extend our cognitive processes into the physical world. 
 
-A prime example would be how Alzheimer’s patients relies on the cognitive scaffolding afforded by wideware, such as with:
+A prime example would be how Alzheimer’s patients rely on the cognitive scaffolding afforded by wideware, such as with:
 
 - Labelling objects in the house
 - Memory books with annotated photos of friends and relatives
 - Diaries for tasks and events
 - Compensating for biological limits on cognition
 
-When we remove these wideware, we are not just interfering with the environment, but **interfering with the person**.
+When we remove this wideware, we are not just interfering with the environment, but **interfering with the person**.
 
 ## Further Discussion
 
@@ -106,9 +105,8 @@ When we remove these wideware, we are not just interfering with the environment,
 
 * What are some ethical consequences of the extended mind theory? Example: “Petty crimes” like theft of a diary containing memories
 
-* (Postman) Postman claimed that we are exposed to so much information that is not actionable. How do we represent information that is not action-oriented? What are the consequences of not being able to
-encode information in action-oriented manner?
+* (Postman) Postman claimed that we are exposed to so much information that is not actionable. How do we represent information that is not action-oriented? What are the consequences of not being able to encode information in an action-oriented manner?
 
 ## Remarks
 
-This project was very fun to work with. The full presentation can be found [here](/extended-mind.pdf).
+This project was very fun to work with. The full presentation can be found [here](/docs/extended-mind.pdf).

@@ -1,7 +1,6 @@
 ---
 title: Hosting a Multiplayer game on a Private IP (SDN example)
 date: "2021-08-01"
-toc: true
 showTags: true
 slug: "zerotier"
 tags:
@@ -10,13 +9,17 @@ tags:
 summary: "Zerotier - using SDN to allow hosting on a private IP"
 ---
 
-> scroll below for a tldr;
+> scroll below for a TL;DR
 
 ## Game Hosting
 
-Imagine you just downloaded Stardew Valley and wanted to host a multiplayer game. (Psst, I talk about Stardew Valley in my previous post.) You clicked on **co-op** and host a farm. Your friends do the same and are expected to enter an IP address - your IP address to be precise.
+Imagine you just downloaded Stardew Valley and wanted to host a multiplayer game. You clicked on **co-op** and host a farm. Your friends do the same and are expected to enter an IP address - your IP address to be precise.
 
-For most people, this method wouldn't work. This is because our computers are using private IP addresses, hidden behind NAT routers. Think of yourselves as prisoners, all locked up in cells. The only way your family can send you a letter is to address the letter to the prison premises. They write your name there, but they don't know which cell you're confined in. They're not allowed to know too, because the prison warden says so.
+For most people, this method wouldn't work. This is because our computers are using private IP addresses, hidden behind Network Address Translation (NAT) routers. 
+
+![NAT Routers](/media/zerotier-nat.png)
+
+Think of yourselves as prisoners, all locked up in cells. The only way your family can send you a letter is to address the letter to the prison premises. They write your name there, but they don't know which cell you're confined in. They're not allowed to know either, because the prison warden says so.
 
 The prison warden collects the letters, and starts up the PC. She enters your details in, and the system prompts her with your cell number. She instructs her underlings to deliver the mail to you. Miraculously, without knowing the cell you were in, your family could send you that letter.
 
@@ -26,11 +29,11 @@ This article assumes that you have prior knowledge of what Stardew Valley is. If
 
 ### Why you can't host on a private IP
 
-Imagine yourself in that cell, and you want your parents to contact you directly. There is simply no way they can reach you because Everything that reaches you must pass through the prison warden. Even if they know your cell number, they put your name and cell number on the envelope. We now have a confused mailman because the cell number isn't a valid postal code on his books. That cell number is only valid to the prison warden.
+Imagine yourself in that cell, and you want your parents to contact you directly. There is simply no way they can reach you because everything that reaches you must pass through the prison warden. Even if they know your cell number, they put your name and cell number on the envelope. We now have a confused mailman because the cell number isn't a valid postal code on his books. That cell number is only valid to the prison warden.
 
 ### How to host on a private IP
 
-Now, much alike Money Heist or Prison Break, you decide to pay someone to be your **Contact** with the outside world. The Contact is a friend of the warden. and can freely walk in and out of prison. The warden won't know he's carrying your secret letters.
+Now, much like Money Heist or Prison Break, you decide to pay someone to be your **Contact** with the outside world. The Contact is a friend of the warden, and can freely walk in and out of prison. The warden won't know he's carrying your secret letters.
 
 But this Contact is more powerful than that. He has deals with a bunch of other prisoners in other prisons. So he needs his own system to remember all those names. He writes in his book - your prison, your cell number, and your name.
 
@@ -52,7 +55,7 @@ Sometimes, there are security settings you may have configured on the site. For 
 
 5. Go to ZeroTier site to approve nodes
 
-Now you're almost done. Hit up `cmd` to bring up your terminal, and write `ipconfig`. You should see one of the network interfaces listed as a ZeroTier virtual network IP. It should start with `192.168.x.x`, which is a standard format for standard IPs. Note the IP address of the **Host** player.
+Now you're almost done. Hit up `cmd` to bring up your terminal, and write `ipconfig` (on Windows). You should see one of the network interfaces listed as a ZeroTier virtual network IP. It should start with `192.168.x.x`, which is a standard format for private IPs. Note the IP address of the **Host** player.
 
 Alternatively, you can also go to the ZeroTier site to check the IP address of the host.
 
@@ -64,4 +67,6 @@ Now, your friends can enter your IP address and connect to your Stardew farm.
 
 ### How does the Contact do it?
 
-ZeroTier calls it Global Area Networking, but it's actually a virtual network achieved with SDN.
+ZeroTier calls it Global Area Networking, but it's actually a virtual network achieved with SDN. ZeroTier serves as an intermediary for routing connections in the overlay network, though it never participates in the communications itself.
+
+![ZeroTier](/media/zerotier.png)

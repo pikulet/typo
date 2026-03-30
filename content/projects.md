@@ -3,81 +3,195 @@ title: "Projects"
 template: "page"
 ---
 
-Check out more on [GitHub](https://github.com/pikulet)!
+More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for fun, and because they're cute.
 
-### Roolet
-**reactJs discrete event visualiser** ([Demo](https://roolets.netlify.app)|[Blog Post](/posts/roolet)|[Repository](https://github.com/pikulet/roolet))
+{{< rawhtml >}}<div class="projects-grid"><div class="projects-col">{{< /rawhtml >}}
 
-![roolet](/media/roolet.png)
+{{< project
+  title="ultimafia"
+  year="2021"
+  star="true"
+  tags="fullstack, open-sourced"
+  link="https://github.com/Ultimafia/Ultimafia"
+  description="Lead contributor for 2 years in this full-stack real-time Mafia game platform. Guided new contributors, including closely mentoring two high-school students for a year each."
+>}}
 
-Full-stack ReactJs site that visualises betting outcomes (pmf, cmf) in xkcd-like graphics. Inspired by Roulette.
+{{< project
+  title="anti-debugging"
+  year="2021"
+  star="true"
+  tags="system, open-sourced"
+  link="https://github.com/pikulet/anti-debugging"
+  description="Windows malware anti-analysis techniques, including self-debugging and anti-virtualisation. Educational reference for reverse engineers."
+>}}
 
-### Synacore
-**Virtual machine for assembly code** ([Repository](https://github.com/pikulet/synacore))
+{{< project
+  title="csessions"
+  year="2026"
+  tags="ai, system"
+  images="/media/csessions-demo.png"
+  description="xbar plugin to monitor active Claude Code sessions from the macOS menu bar."
+>}}
 
-![synacore](/media/synacore.png)
+{{< project
+  title="intellex"
+  year="2019"
+  tags="system"
+  link="https://github.com/pikulet/intellex"
+  description="Legal document search engine: tf-idf, positional phrase indexing, Boolean queries, and Rocchio relevance feedback."
+>}}
 
-Implemented an object-oriented VM that can read assembly code. Includes memory, registers, stack, function calls, jumps and an ALU. This project is for the [Synacor Challenge](https://challenge.synacor.com/)
+{{< project
+  title="memory attacks"
+  year="2021"
+  tags="system"
+  link="https://github.com/pikulet/mem-attacks-example"
+  description="Binary exploitation techniques — buffer overflow, format string attacks, and ROP chains. Env: Ubuntu 16.04 with PEDA/GDB."
+>}}
 
-### Pomenohenn
-**Retro word game in Python, Pyxel** ([Repository](https://github.com/pikulet/phenn-pyxel))
+{{< project
+  title="halp"
+  year="2018"
+  description="Enables NUS students to use IVLE login to get a queue number at the school clinic. Shows the estimated wait time as well. Without this, you had to take a queue number and physically wait at the clinic for an hour."
+>}}
 
-![pomenohenn](/media/phenn-pyxel.png)
-Created a retro word game (limited to 256x256 pixels!) in Python, Pyxel. The inspiration was from a Cambridge article on how we are able contextually understand mispelled words, as long as the first and last letters remained in place.
+{{< project
+  title="pox"
+  year="2020"
+  tags="system"
+  description="Software-defined networking: Programmed for L2/L3 (switch/router): self-learning switch, firewall, variable QoS"
+>}}
 
-### FlaskShort
-**Full-stack URL Shortener in Python** ([Repository](https://github.com/pikulet/flask-short))
+{{< project
+  title="oracle label security"
+  year="2021"
+  tags="system"
+  link="https://github.com/pikulet/oracle-label-security"
+  description="Used OLS to define access rules on database tables"
+>}}
 
-![flask short demo](/media/flask-short-demo.png)
-A URL shortener with a complete backend system, using Flask, FlaskBootstrap, PostgreSQL.
+{{< project
+  title="ghost"
+  year="2021"
+  tags="game"
+  link="https://github.com/pikulet/ghost"
+  description="Multiplayer word-guessing game on Telegram. A social zero-knowledge game, where players must prove that they know a word without revealing it."
+>}}
 
-### Ghost
-**Python package for a word game** ([PyPi Package](https://pypi.org/simple/ghost-word-game/)|[Repository](https://github.com/pikulet/ghost))
+{{< project
+  title="pomenohenn"
+  year="2021"
+  tags="game"
+  link="https://github.com/pikulet/phenn-pyxel"
+  images="/media/phenn-pyxel.png, /media/phenn-title.png, /media/phenn-gameplay.png"
+  description="Retro word game (256×256 pixels!) in Python and Pyxel. Ieripsnd by our atiliby to qlkciuy raed selbmarcd wdros wettirn tihs way."
+>}}
 
-Created a Finite State Machine Game Engine that can be used by various applications (web, mobile).
+{{< project
+  title="pamagot"
+  year="2021"
+  tags="game"
+  link="https://github.com/pikulet/pamagot"
+  images="/media/sprites-chars.png, /media/sprites-items.png"
+  description="Python recreation of the Tamagotchi Version 4 Connection toy. Custom game engine with character evolution, in-game shop, and Pyxel graphics."
+>}}
 
-### Dynalite
-**Internet-of-Things using RaspberryPi and CoAP** ([Demo](https://evantay.com/projects/#dynalite)|[Repository](https://github.com/pikulet/dynalite)|[Presentation](/rpi.pdf))
+{{< project
+  title="5amcrook"
+  year="2020"
+  tags="fullstack"
+  description="Satirical Animal Crossing news site with weekly crossword puzzles. Built during COVID for the SG Animal Crossing community."
+>}}
 
-![dynalite](/media/dynalite.png)
-Created a light-detection system to retrieve data on room occupancy rates. Finds available study spaces in school. I worked on the RaspberryPi module, using CoAP (Constrained Application Protocol). CoAP is a lightweight http-like protocol for use in IoT devices with limited bandwidth (this will soon be resovled with 5G).
+{{< rawhtml >}}</div><div class="projects-col">{{< /rawhtml >}}
 
-### tcptrace
-**Traceroute in TCP using C** ([Blog Post](/posts/tcp-traceroute)|[Repository](https://github.com/pikulet/tcptrace))
+{{< project
+  title="pose estimator"
+  year="2019"
+  star="true"
+  tags="system, fullstack"
+  link="https://github.com/pikulet/til-ai-camp"
+  images="/media/pose-cnn-layers.png, /media/pose-trf-learning.png"
+  description="Pose estimator trained in Tensorflow/Keras using transfer learning and the ensemble method. Won 6th place (Merit Award) out of 50+ teams at DSTA TIL AI Hack 2019."
+>}}
 
-![tcp traceroute](/media/tcp-traceroute.png)
-Created a primitive traceroute in TCP. It can tell you which routers your data goes through before reaching your destination.
+{{< project
+  title="padding oracle attack"
+  year="2019"
+  star="true"
+  tags="system"
+  description="Attack on PKCS5/7 Padding. By knowing if a given ciphertext is valid, we can trace backwards the original plaintext. We can also use this to generate ciphertexts for new plaintexts."
+>}}
 
-### Intellex Search Engine
-**A weighted tf-idf information retrieval system** ([Repository](https://github.com/pikulet/intellex))
+{{< project
+  title="nook"
+  year="2026"
+  tags="fullstack"
+  description="Cozy Chrome homepage extension."
+>}}
 
-![diagram](/media/intellex.png)
-Created a search system for legal documents (data by Intellex). I worked on the indexing portion, as well as creating APIs to access the indexed data. Having worked with the legal data let me understand the sheer complexity of legal information retrieval. Different court systems, different document formats and different terminology used are just some problems plaguing the legal industry.
+{{< project
+  title="tcptrace"
+  year="2021"
+  tags="system"
+  link="https://github.com/pikulet/tcptrace"
+  images="/media/tcptrace-example.png"
+  description="TCP-based traceroute in C using raw sockets. Bypasses ICMP firewalls that block traditional traceroute."
+>}}
 
-### semacrawl
-**Multi-threaded web crawler using semaphores** ([Repository](https://github.com/pikulet/semacrawl))
+{{< project
+  title="synacore"
+  year="2021"
+  tags="system"
+  link="https://github.com/pikulet/synacore"
+  images="/media/synacore.png"
+  description="Object-oriented virtual machine that executes assembly code, with memory, registers, stack, function calls, jumps, and an ALU. Built for the Synacor Challenge."
+>}}
 
-A simple database-free web crawler using semaphores.
+{{< project
+  title="dynalite"
+  year="2021"
+  images="/media/dynalite.png"
+  description="Uses an RPi+COAP protocol with light sensors. Detects and displays if a room is occupied in real-time, more accurate than room booking systems."
+>}}
 
-### Pose Estimator
-**DSTA TIL Artificial Intelligence Hack 2019** ([Blog Post](/posts/dsta-til-hack)|[Repository](https://github.com/pikulet/til-ai-camp)|[Slides](/pose-estimator-slides.pdf))
+{{< project
+  title="poker agent"
+  year="2019"
+  tags="ai"
+  description="AI Agent to play limit poker."
+>}}
 
-Trained a pose estimator in Tensorflow/ Keras using Transfer Learning and the ensemble method. Won the 6th place in the competition (Merit Award), out of 50+ teams
+{{< project
+  title="Stardew Valley mods"
+  year="2023"
+  tags="open-sourced"
+  description="Contributed to open-sourced SMAPI mods for the game, including a butterfly-catching mod."
+>}}
 
-### Poker Agent
-**Artificial Intelligence** ([Blog Post](/posts/poker-agent)|[Report](/poker-report.pdf))
+{{< project
+  title="chopsticks"
+  year="2021"
+  tags="game"
+  link="https://github.com/pikulet/chopsticks"
+  description="Game-theoretic analysis of the childhood game Chopsticks. Builds a game state graph to prove that optimal play always results in a perpetual tie. (It's impossible to win unless your opponent made a mistake.)"
+>}}
 
-![poker](/media/poker-snapshot.png)
-Combined the concepts of CounterFactual Regret (CFR) Minimisation and Deep-Q Networks (DQN) in a poker agent. 
+{{< project
+  title="roolet"
+  year="2022"
+  tags="fullstack"
+  link="https://roolets.netlify.app"
+  images="/media/roolet.png"
+  description="Discrete event visualiser with xkcd-style charts. Built to explaining loss-dampening in roulette by betting on more squares."
+>}}
 
-### Concierge
-**Command-Line Hotel Management Application** ([Repository](https://github.com/pikulet/concierge)|[Project Portfolio](/concierge-portfolio.pdf))
+{{< project
+  title="SynARThesia"
+  year="2019"
+  tags="fullstack"
+  link="https://github.com/pikulet/HacknRoll-SynARThesia"
+  description="HacknRoll 2019 hack. Play a keyboard piano across octave rows — each note generates artwork, exploring synesthetic neurodivergence."
+>}}
 
-![concierge](/media/concierge.png)
-This project was morphed from a 10kLoC address book application in Java. The system has an MVC architecture. I created a login system using SHA256 hash to protect the password. This feature involve creating a new command, a login manager, and password storage.
-
-### Healthcare Queuing Application
-**Android App to manage queues at NUS UHC** ([Repository](https://github.com/pikulet/orbital-halp))
-
-![halp](/media/halp.png)
-Created an android prototype that allows NUS students to take a queue number without being physically present at the clinic. The project is now outdated as we integrated to the NUS system using the old IVLE LAPI. NUS has since migrated to LumiNUS.
+{{< rawhtml >}}</div></div>{{< /rawhtml >}}

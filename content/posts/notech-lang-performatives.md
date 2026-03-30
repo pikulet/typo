@@ -25,11 +25,15 @@ On the other hand, constative sentences merely describe. When Martin says that h
 
 It is possible to assign a **truth value to constative sentences** – Martin is either aware or not aware of Bradbury’s work. However, we cannot decide if “I suggest electing Martin” is true or false. We can only decide if “The teacher suggests electing Martin”, the constative version of the sentence, to be true or false.
 
+![Performative vs. Constative Utterances](/media/performative-vs-constative.svg)
+
 However, Austin agrees that **performative utterances should still be subject to some rules of judgement**. While constative utterances can be false, the unsatisfactory versions of performative utterances are infelicitous. To be **felicitous** (the performative equivalent of validity), the performative act must have a conventional effect that is invoked appropriately. The act must be executed sincerely.
 
 ![transcript-2](/media/performative-transcript-2.png)
 
-When the Lisa’s teacher asks her to show her talent, he bets the she is good at the saxophone. By tracing Austin’s standard form, we can say that **bet** is a performative verb. The teacher does want to make a bet when he says he bets. However, there is no actual bet because Lisa **did not reciprocate** in the conventional manner. That is, Lisa did not accept the bet. Furthermore, I posit that the teacher was **insincere** in making the bet – his real intention was for Lisa to play the saxophone for the class. Two rules laid out by Austin, the social convention of reciprocating a bet and the sincerity behind making the bet, were not met, so the performative statement of making the bet is **infelicitous**.
+When Lisa’s teacher asks her to show her talent, he bets she is good at the saxophone. By tracing Austin’s standard form, we can say that **bet** is a performative verb. The teacher does want to make a bet when he says he bets. However, there is no actual bet because Lisa **did not reciprocate** in the conventional manner. That is, Lisa did not accept the bet. Furthermore, I posit that the teacher was **insincere** in making the bet – his real intention was for Lisa to play the saxophone for the class. Two rules laid out by Austin, the social convention of reciprocating a bet and the sincerity behind making the bet, were not met, so the performative statement of making the bet is **infelicitous**.
+
+![Felicity Conditions Flowchart](/media/felicity-conditions-flowchart.svg)
 
 ### Performative Utterances and Reader Response
 
@@ -37,7 +41,7 @@ Performative utterances are used in cartoons like The Simpsons to help the audie
 
 The teacher could have said non-performative variants like “I am suggesting that we elect Martin.”, which instead describes her suggestion. However, the viewers then are not the objects of the performance and are not pulled into the scene the same way the original performative act implicates them. The readers are no longer obliged to take the suggestion into consideration. In this instance of a performative utterance, the conscripting effect then lies in the involuntary involvement of the reader in the events in the cartoon.
 
-The reader (or in this scenario viewer), having a suggestion made to him or her, has to **trace through the line of thoughts** to understand why the teacher is making the suggestion, and why students should elect Martin. This technique, by engaging the the readers, could help them follow the fast-forwarded life in the cartoon.
+The reader (or in this scenario viewer), having a suggestion made to him or her, has to **trace through the line of thought** to understand why the teacher is making the suggestion, and why students should elect Martin. This technique, by engaging the readers, could help them follow the fast-forwarded life in the cartoon.
 
 For instance, the use of the performative in demonstrating the teacher’s suggestion directs the reader to understand that perhaps the class is really not in favour of Martin being class president. The teacher made the suggestion, and like the other students in the class, the viewer barely has any time to respond before Martin steps in.
 

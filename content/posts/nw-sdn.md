@@ -24,6 +24,10 @@ However, the problem is that the **Network layer is responsible for too many thi
 
 Having programmable switches makes it easier to introduce code for network monitoring, or even customise existing protocols like how switches forward packets. All these programmable switches are centrally controlled by (one or a few) controllers, which can coordinate the overall network behaviour.
 
+![Traditional networking vs SDN architecture](/media/sdn-vs-traditional.svg)
+
+![SDN three-tier architecture with controller, switches, and hosts](/media/sdn-architecture.svg)
+
 ## Getting Started on SDN
 
 The gist I've written [here](https://gist.github.com/pikulet/e8de2664e01be4542b810af2e2de833f) shows three examples of SDN in action. These examples were written based on the POX controller, and tested using Mininet to simulate the network (instead of actually purchasing 10+ switches). The controller and virtual switches are communicating using the OpenFlow API.
