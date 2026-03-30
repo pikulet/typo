@@ -109,4 +109,4 @@ When we remove this wideware, we are not just interfering with the environment, 
 
 ## Remarks
 
-This project was very fun to work with. The full presentation can be found [here](/docs/extended-mind.pdf).
+This project was very fun to work with. The full presentation can be found [here](/docs/extended%20mind.pdf).

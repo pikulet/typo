@@ -77,23 +77,3 @@ The high-priority semaphore is actually optional. With just L and N, the code is
 
 
 ---
-
-## Review
-
-### P0 — Spelling & Grammar
-
-1. **"How can we give processes of type B to be given priority access" (line 37)** — Grammatically broken. Fix: "How can we give processes of type B priority access to the semaphore?" or "How can processes of type B be given priority access?"
-
-### P1 — Explanation Gaps
-
-1. **Semaphore initial values never stated** — All three semaphores (N, H, L) are assumed initialised to 1, but this is never mentioned.
-2. **No walkthrough of why the solution works** — The pseudocode is presented but no step-by-step trace shows the mechanism. A concrete scenario (e.g., B1 holds H, A1 blocks at wait(H), B2 queues ahead of A1) would make the priority mechanism tangible.
-3. **"At most one low-priority process can be blocked at wait(H)" (line 74)** — Key insight stated without justification. Explain: L is binary, so only one A-type process passes `wait(L)` at a time.
-4. **"Turnstile problem with writer priority" (line 76)** — Undefined. Cite *The Little Book of Semaphores* by Allen B. Downey (freely available).
-5. **H is "actually optional" (line 76)** — Surprising given the whole solution is framed as needing three semaphores. What does H add?
-6. **"No queue or priority" (line 31)** — Implementation-dependent. Some semaphore implementations do maintain FIFO queues.
-
-### P2 — Image Opportunities
-
-1. **Scenario trace diagram** — Timeline showing 2-3 processes of each type competing for semaphores, illustrating how B-type processes "skip ahead."
-2. **Layered gate diagram** — Already present (`priority-semaphore-gates.svg`). Verify it shows B-type processes bypassing the L gate.
