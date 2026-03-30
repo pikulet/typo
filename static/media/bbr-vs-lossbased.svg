@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="axis-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1B2A4A"/>
+    </marker>
+    <marker id="loss-arrow" markerWidth="6" markerHeight="8" refX="3" refY="8" orient="auto">
+      <path d="M0,0 L6,0 L3,8 Z" fill="#B33F40"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="440" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" fill="#1B2A4A" font-size="14" font-weight="bold">Loss-Based (TCP Reno) vs. BBR Sending Rate</text>
+
+  <!-- Grid area: x=100..820, y=60..340 -->
+  <!-- Light grid lines -->
+  <line x1="100" y1="130" x2="820" y2="130" stroke="#E8ECF0" stroke-width="1"/>
+  <line x1="100" y1="200" x2="820" y2="200" stroke="#E8ECF0" stroke-width="1"/>
+  <line x1="100" y1="270" x2="820" y2="270" stroke="#E8ECF0" stroke-width="1"/>
+
+  <line x1="220" y1="60" x2="220" y2="340" stroke="#E8ECF0" stroke-width="1"/>
+  <line x1="340" y1="60" x2="340" y2="340" stroke="#E8ECF0" stroke-width="1"/>
+  <line x1="460" y1="60" x2="460" y2="340" stroke="#E8ECF0" stroke-width="1"/>
+  <line x1="580" y1="60" x2="580" y2="340" stroke="#E8ECF0" stroke-width="1"/>
+  <line x1="700" y1="60" x2="700" y2="340" stroke="#E8ECF0" stroke-width="1"/>
+
+  <!-- Bandwidth ceiling dashed line -->
+  <line x1="100" y1="95" x2="820" y2="95" stroke="#4682B4" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.5"/>
+  <text x="825" y="99" fill="#4682B4" font-size="10" opacity="0.7">bandwidth</text>
+  <text x="825" y="112" fill="#4682B4" font-size="10" opacity="0.7">ceiling</text>
+
+  <!-- Y-axis -->
+  <line x1="100" y1="340" x2="100" y2="55" stroke="#1B2A4A" stroke-width="2" marker-end="url(#axis-arrow)"/>
+  <text x="45" y="200" text-anchor="middle" fill="#1B2A4A" font-size="11" transform="rotate(-90 45 200)">Sending Rate</text>
+
+  <!-- X-axis -->
+  <line x1="100" y1="340" x2="825" y2="340" stroke="#1B2A4A" stroke-width="2" marker-end="url(#axis-arrow)"/>
+  <text x="460" y="368" text-anchor="middle" fill="#1B2A4A" font-size="11">Time</text>
+
+  <!-- TCP Reno sawtooth (amber #C67A00) -->
+  <!-- Cycle 1: ramp 100,300 -> 220,130  drop to 220,260 -->
+  <!-- Cycle 2: ramp 220,260 -> 340,130  drop to 340,260 -->
+  <!-- Cycle 3: ramp 340,260 -> 460,130  drop to 460,260 -->
+  <!-- Cycle 4: ramp 460,260 -> 580,130  drop to 580,260 -->
+  <!-- Cycle 5: ramp 580,260 -> 700,130  drop to 700,260 -->
+  <!-- Cycle 6: ramp 700,260 -> 800,180 -->
+  <polyline
+    points="110,310 220,130 220,260 340,130 340,260 460,130 460,260 580,130 580,260 700,130 700,260 800,175"
+    fill="none" stroke="#C67A00" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Loss event markers (red X marks at drop points) -->
+  <g fill="none" stroke="#B33F40" stroke-width="2.5" stroke-linecap="round">
+    <!-- Loss at x=220 -->
+    <line x1="214" y1="124" x2="226" y2="136"/>
+    <line x1="226" y1="124" x2="214" y2="136"/>
+    <!-- Loss at x=340 -->
+    <line x1="334" y1="124" x2="346" y2="136"/>
+    <line x1="346" y1="124" x2="334" y2="136"/>
+    <!-- Loss at x=460 -->
+    <line x1="454" y1="124" x2="466" y2="136"/>
+    <line x1="466" y1="124" x2="454" y2="136"/>
+    <!-- Loss at x=580 -->
+    <line x1="574" y1="124" x2="586" y2="136"/>
+    <line x1="586" y1="124" x2="574" y2="136"/>
+    <!-- Loss at x=700 -->
+    <line x1="694" y1="124" x2="706" y2="136"/>
+    <line x1="706" y1="124" x2="694" y2="136"/>
+  </g>
+
+  <!-- Loss annotation callout (first loss event) -->
+  <line x1="220" y1="110" x2="220" y2="78" stroke="#B33F40" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="148" y="60" width="145" height="20" rx="3" fill="#FDF0F0" stroke="#B33F40" stroke-width="1"/>
+  <text x="220" y="74" text-anchor="middle" fill="#B33F40" font-size="9">loss detected: halve rate</text>
+
+  <!-- BBR line (steel blue #4682B4) — smooth, near ceiling -->
+  <path d="M 110,310 C 160,200 200,110 260,105 C 320,100 380,108 440,103 C 500,98 560,107 620,104 C 680,101 740,106 800,103"
+    fill="none" stroke="#4682B4" stroke-width="2.5"/>
+
+  <!-- Legend -->
+  <rect x="130" y="390" width="340" height="36" rx="4" fill="#F7F9FC" stroke="#B0BEC5" stroke-width="1"/>
+  <!-- Reno -->
+  <line x1="145" y1="408" x2="180" y2="408" stroke="#C67A00" stroke-width="2.5"/>
+  <text x="188" y="412" fill="#C67A00" font-size="11">TCP Reno (loss-based)</text>
+  <!-- BBR -->
+  <line x1="355" y1="408" x2="390" y2="408" stroke="#4682B4" stroke-width="2.5"/>
+  <text x="398" y="412" fill="#4682B4" font-size="11">BBR</text>
+
+  <!-- Loss marker legend -->
+  <g fill="none" stroke="#B33F40" stroke-width="2" stroke-linecap="round">
+    <line x1="497" y1="402" x2="505" y2="414"/>
+    <line x1="505" y1="402" x2="497" y2="414"/>
+  </g>
+  <text x="515" y="412" fill="#B33F40" font-size="10">= loss event</text>
+</svg>

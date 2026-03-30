@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 340">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, 'Segoe UI', sans-serif; font-size: 16px; font-weight: 600; fill: #3a2a1a; }
+      .caption { font-family: -apple-system, 'Segoe UI', sans-serif; font-size: 12px; fill: #7a6a5a; }
+      .chomp-label { font-family: -apple-system, 'Segoe UI', sans-serif; font-size: 11px; fill: #7a6a5a; font-style: italic; }
+    </style>
+    <marker id="arrowDown" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
+      <path d="M0,0 L4,6 L8,0" fill="none" stroke="#9a7a5a" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="230" y="28" text-anchor="middle" class="title">Chomp: the poisoned chocolate game</text>
+
+  <!-- Grid: 5 columns x 4 rows -->
+  <!-- Each square: 52x52, spacing 56 (52 + 4 gap) -->
+  <!-- Col positions: 62, 118, 174, 230, 286 -->
+  <!-- Row positions (top to bottom): 46, 102, 158, 214 -->
+
+  <!-- === Remaining (solid) chocolate squares === -->
+
+  <!-- Row 3 (bottom): all 5 columns -->
+  <rect x="62"  y="214" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="118" y="214" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="174" y="214" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="230" y="214" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="286" y="214" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+
+  <!-- Row 2: all 5 columns -->
+  <rect x="62"  y="158" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="118" y="158" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="174" y="158" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="230" y="158" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="286" y="158" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+
+  <!-- Row 1: columns 0-1 remain -->
+  <rect x="62"  y="102" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="118" y="102" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+
+  <!-- Row 0 (top): columns 0-1 remain -->
+  <rect x="62"  y="46" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+  <rect x="118" y="46" width="52" height="52" rx="4" fill="#a0522d" stroke="#6b3410" stroke-width="1.5"/>
+
+  <!-- === Chomped squares (faded, dashed) === -->
+
+  <!-- The chosen square: row 1, col 2 — slightly darker to distinguish -->
+  <rect x="174" y="102" width="52" height="52" rx="4" fill="#dcc8b0" stroke="#b09880" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Row 1: cols 3-4 -->
+  <rect x="230" y="102" width="52" height="52" rx="4" fill="#efe6dc" stroke="#c8b8a8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="286" y="102" width="52" height="52" rx="4" fill="#efe6dc" stroke="#c8b8a8" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Row 0: cols 2-4 -->
+  <rect x="174" y="46" width="52" height="52" rx="4" fill="#efe6dc" stroke="#c8b8a8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="230" y="46" width="52" height="52" rx="4" fill="#efe6dc" stroke="#c8b8a8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="286" y="46" width="52" height="52" rx="4" fill="#efe6dc" stroke="#c8b8a8" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- === Poisoned square (bottom-left) === -->
+  <rect x="62" y="214" width="52" height="52" rx="4" fill="#8b1a1a" stroke="#5a0f0f" stroke-width="2"/>
+  <line x1="76" y1="228" x2="100" y2="252" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="228" x2="76" y2="252" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- === Annotations === -->
+
+  <!-- "chosen square" label with line pointing down to the square -->
+  <text x="200" y="82" text-anchor="middle" class="chomp-label">chosen square</text>
+  <line x1="200" y1="86" x2="200" y2="100" stroke="#9a7a5a" stroke-width="1" marker-end="url(#arrowDown)"/>
+
+  <!-- "chomped" bracket on right side spanning rows 0-1 -->
+  <line x1="348" y1="52" x2="348" y2="148" stroke="#9a8a7a" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="343" y1="52" x2="353" y2="52" stroke="#9a8a7a" stroke-width="1"/>
+  <line x1="343" y1="148" x2="353" y2="148" stroke="#9a8a7a" stroke-width="1"/>
+  <text x="360" y="104" class="chomp-label" text-anchor="start">chomped</text>
+
+  <!-- "poison" label below the poisoned square -->
+  <text x="88" y="286" text-anchor="middle" class="caption">poison</text>
+  <line x1="88" y1="275" x2="88" y2="268" stroke="#7a6a5a" stroke-width="1"/>
+
+  <!-- Explanatory captions -->
+  <text x="230" y="314" text-anchor="middle" class="caption">Player selects a square; all squares above and to its right are removed.</text>
+  <text x="230" y="330" text-anchor="middle" class="caption">The player forced to eat the poisoned square loses.</text>
+</svg>

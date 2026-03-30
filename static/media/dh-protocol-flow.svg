@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 620" font-family="'Segoe UI', system-ui, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrowR" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrowL" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="620" rx="8" fill="#fafaf9"/>
+
+  <!-- Title -->
+  <text x="360" y="32" text-anchor="middle" font-size="18" font-weight="600" fill="#1e293b">Diffie-Hellman Key Exchange</text>
+
+  <!-- Channel labels -->
+  <text x="140" y="58" text-anchor="middle" font-size="12" fill="#94a3b8" font-style="italic">Private</text>
+  <text x="360" y="58" text-anchor="middle" font-size="12" fill="#94a3b8" font-style="italic">Public Channel</text>
+  <text x="580" y="58" text-anchor="middle" font-size="12" fill="#94a3b8" font-style="italic">Private</text>
+
+  <!-- Alice header -->
+  <rect x="60" y="70" width="160" height="40" rx="6" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+  <text x="140" y="95" text-anchor="middle" fill="#fff" font-weight="600" font-size="15">Alice</text>
+
+  <!-- Bob header -->
+  <rect x="500" y="70" width="160" height="40" rx="6" fill="#92400e" stroke="#78350f" stroke-width="1.5"/>
+  <text x="580" y="95" text-anchor="middle" fill="#fff" font-weight="600" font-size="15">Bob</text>
+
+  <!-- Swimlane lines -->
+  <line x1="140" y1="110" x2="140" y2="530" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="580" y1="110" x2="580" y2="530" stroke="#d6b06e" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Step 1: Public parameters -->
+  <rect x="220" y="125" width="280" height="38" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="360" y="140" text-anchor="middle" font-size="12" fill="#475569" font-weight="600">Agree on public parameters</text>
+  <text x="360" y="155" text-anchor="middle" font-size="13" fill="#334155" font-family="'SF Mono', 'Consolas', monospace">g, p (generator and prime modulus)</text>
+
+  <!-- Step 2: Alice picks secret -->
+  <rect x="30" y="185" width="220" height="44" rx="5" fill="#e0e7ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="140" y="203" text-anchor="middle" font-size="12" fill="#4338ca" font-weight="600">Pick secret a</text>
+  <text x="140" y="220" text-anchor="middle" font-size="13" fill="#4338ca" font-family="'SF Mono', 'Consolas', monospace">Compute A = g^a mod p</text>
+
+  <!-- Step 3: Bob picks secret -->
+  <rect x="470" y="185" width="220" height="44" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="580" y="203" text-anchor="middle" font-size="12" fill="#92400e" font-weight="600">Pick secret b</text>
+  <text x="580" y="220" text-anchor="middle" font-size="13" fill="#92400e" font-family="'SF Mono', 'Consolas', monospace">Compute B = g^b mod p</text>
+
+  <!-- Arrow: Alice sends A to Bob -->
+  <line x1="165" y1="270" x2="555" y2="270" stroke="#64748b" stroke-width="2" marker-end="url(#arrowR)"/>
+  <rect x="240" y="254" width="240" height="22" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="360" y="270" text-anchor="middle" font-size="13" fill="#334155" font-family="'SF Mono', 'Consolas', monospace">Send A = g^a mod p</text>
+
+  <!-- Arrow: Bob sends B to Alice -->
+  <line x1="555" y1="320" x2="165" y2="320" stroke="#64748b" stroke-width="2" marker-end="url(#arrowL)"/>
+  <rect x="240" y="304" width="240" height="22" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="360" y="320" text-anchor="middle" font-size="13" fill="#334155" font-family="'SF Mono', 'Consolas', monospace">Send B = g^b mod p</text>
+
+  <!-- Eavesdropper note -->
+  <text x="360" y="356" text-anchor="middle" font-size="11" fill="#94a3b8" font-style="italic">Eavesdropper sees: g, p, A, B</text>
+
+  <!-- Step 6: Alice computes shared secret -->
+  <rect x="30" y="375" width="220" height="44" rx="5" fill="#e0e7ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="140" y="393" text-anchor="middle" font-size="12" fill="#4338ca" font-weight="600">Compute shared secret</text>
+  <text x="140" y="410" text-anchor="middle" font-size="13" fill="#4338ca" font-family="'SF Mono', 'Consolas', monospace">s = B^a = g^(ab) mod p</text>
+
+  <!-- Step 7: Bob computes shared secret -->
+  <rect x="470" y="375" width="220" height="44" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="580" y="393" text-anchor="middle" font-size="12" fill="#92400e" font-weight="600">Compute shared secret</text>
+  <text x="580" y="410" text-anchor="middle" font-size="13" fill="#92400e" font-family="'SF Mono', 'Consolas', monospace">s = A^b = g^(ab) mod p</text>
+
+  <!-- Converging lines to shared secret -->
+  <line x1="140" y1="419" x2="230" y2="470" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="580" y1="419" x2="490" y2="470" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Shared secret box -->
+  <rect x="195" y="460" width="330" height="55" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="360" y="483" text-anchor="middle" font-size="13" fill="#166534" font-weight="700">Shared Secret Established</text>
+  <text x="360" y="504" text-anchor="middle" font-size="15" fill="#166534" font-family="'SF Mono', 'Consolas', monospace" font-weight="600">s = g^(ab) mod p</text>
+
+  <!-- Eavesdropper cannot compute note -->
+  <text x="360" y="540" text-anchor="middle" font-size="11" fill="#dc2626" font-style="italic">Eavesdropper cannot compute g^(ab) from g^a and g^b (CDH problem)</text>
+
+  <!-- Legend -->
+  <rect x="200" y="562" width="320" height="42" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="214" y="572" width="12" height="12" rx="2" fill="#e0e7ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="232" y="583" font-size="11" fill="#64748b">Alice (private)</text>
+  <rect x="320" y="572" width="12" height="12" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="338" y="583" font-size="11" fill="#64748b">Bob (private)</text>
+  <rect x="414" y="572" width="12" height="12" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="432" y="583" font-size="11" fill="#64748b">Shared secret</text>
+</svg>

@@ -25,21 +25,19 @@ hideHeader = false
 # Intro on main page, content is markdown
 homeIntroTitle = 'hey!'
 homeIntroContent = """
-I'm a software engineer working on large-scale distributed systems, and a dilettante in recreational mathematics. 
+I'm a software engineer working on large-scale distributed systems, and a dilettante in recreational mathematics. I write about my favourite tech and non-tech topics [here](/posts).
 
-Besides software development, I enjoy technical communication and write about a mix of tech and non-tech content [here](/posts).
-
-I've [made a few stuff](/projects) entirely for fun.
+I've [made a few things](/projects) entirely for fun.
 """
 
 # Collection to display on home
 homeCollectionTitle = 'Posts'
-# homeCollection = 'posts'
+homeCollection = 'posts'
 
 # Lists parameters
 paginationSize = 10
 listSummaries = true
-listDateFormat = '2 Jan 2006'
+listDateFormat = 'Jan 2006'
 
 # Breadcrumbs
 [params.breadcrumbs]
@@ -64,6 +62,10 @@ url = "/"
 [[params.menu]]
 name = "blog"
 url = "/posts"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
 
 # Syntax highlight on code blocks
 [markup]

@@ -1,0 +1,23 @@
+[project]
+name = "blogagents"
+version = "0.1.0"
+description = "Multi-agent orchestration system for Hugo blog management"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+    "claude-agent-sdk",
+    "anyio>=4.0",
+    "click>=8.0",
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+blogagents = "blogagents.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["blogagents*"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

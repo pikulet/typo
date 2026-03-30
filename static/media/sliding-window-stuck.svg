@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b91c1c" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="320" rx="8" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="440" y="32" text-anchor="middle" font-size="14" font-weight="600" fill="#334155">Sliding Window (capacity: 10)</text>
+
+  <!-- Blocked messages on the left -->
+  <!-- M12 -->
+  <rect x="30" y="100" width="52" height="44" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="56" y="126" text-anchor="middle" font-size="11" fill="#9ca3af">M12</text>
+
+  <!-- M11 -->
+  <rect x="92" y="100" width="52" height="44" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="118" y="126" text-anchor="middle" font-size="11" fill="#9ca3af">M11</text>
+
+  <!-- Blocked arrow pointing right -->
+  <line x1="152" y1="122" x2="176" y2="122" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- X mark on arrow -->
+  <line x1="168" y1="112" x2="178" y2="132" stroke="#b91c1c" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="178" y1="112" x2="168" y2="132" stroke="#b91c1c" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- "New messages blocked" label -->
+  <text x="82" y="76" text-anchor="middle" font-size="11" font-weight="500" fill="#b91c1c">New messages</text>
+  <text x="82" y="90" text-anchor="middle" font-size="11" font-weight="500" fill="#b91c1c">blocked</text>
+
+  <!-- Window border -->
+  <rect x="190" y="80" width="540" height="84" rx="6" fill="none" stroke="#475569" stroke-width="2.5"/>
+
+  <!-- Window slots M1-M10 (amber/orange filled) -->
+  <!-- M1 -->
+  <rect x="198" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="221" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M1</text>
+
+  <!-- M2 -->
+  <rect x="250" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="273" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M2</text>
+
+  <!-- M3 -->
+  <rect x="302" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="325" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M3</text>
+
+  <!-- M4 -->
+  <rect x="354" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="377" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M4</text>
+
+  <!-- M5 -->
+  <rect x="406" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="429" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M5</text>
+
+  <!-- M6 -->
+  <rect x="458" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="481" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M6</text>
+
+  <!-- M7 -->
+  <rect x="510" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="533" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M7</text>
+
+  <!-- M8 -->
+  <rect x="562" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="585" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M8</text>
+
+  <!-- M9 -->
+  <rect x="614" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="637" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M9</text>
+
+  <!-- M10 -->
+  <rect x="666" y="100" width="46" height="44" rx="4" fill="#f59e0b" stroke="#d97706" stroke-width="1.2"/>
+  <text x="689" y="126" text-anchor="middle" font-size="11" font-weight="500" fill="#451a03">M10</text>
+
+  <!-- Right side: broken ACK arrows -->
+  <!-- Arrow stub exiting window -->
+  <line x1="738" y1="122" x2="762" y2="122" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-gray)"/>
+  <!-- X mark -->
+  <line x1="754" y1="112" x2="764" y2="132" stroke="#b91c1c" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="764" y1="112" x2="754" y2="132" stroke="#b91c1c" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- "No ACKs" box on the right -->
+  <rect x="778" y="96" width="76" height="52" rx="4" fill="none" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="816" y="118" text-anchor="middle" font-size="11" font-weight="500" fill="#b91c1c">No ACKs</text>
+  <text x="816" y="134" text-anchor="middle" font-size="11" font-weight="500" fill="#b91c1c">received</text>
+
+  <!-- Direction arrows under window -->
+  <text x="208" y="195" font-size="10" fill="#64748b">oldest</text>
+  <line x1="240" y1="192" x2="680" y2="192" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow-gray)"/>
+  <text x="685" y="195" font-size="10" fill="#64748b">newest</text>
+
+  <!-- Bottom annotation -->
+  <rect x="190" y="220" width="540" height="36" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="460" y="243" text-anchor="middle" font-size="12" fill="#92400e">All slots occupied -- no ACKs received -- window cannot advance</text>
+
+  <!-- Legend at bottom -->
+  <rect x="240" y="278" width="16" height="16" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+  <text x="264" y="291" font-size="10" fill="#475569">Unacknowledged (in-flight)</text>
+
+  <rect x="440" y="278" width="16" height="16" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="464" y="291" font-size="10" fill="#475569">Blocked (waiting for slot)</text>
+</svg>

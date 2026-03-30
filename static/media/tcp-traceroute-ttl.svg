@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1B2A4A"/>
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#B33F40"/>
+    </marker>
+    <marker id="arr-grn" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/>
+    </marker>
+  </defs>
+
+  <rect width="860" height="380" fill="white"/>
+
+  <!-- Title -->
+  <text x="430" y="30" text-anchor="middle" fill="#1B2A4A" font-size="14" font-weight="bold">TTL-based Probing</text>
+
+  <!-- Nodes -->
+  <!-- Source -->
+  <rect x="20" y="55" width="90" height="36" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="65" y="78" text-anchor="middle" fill="#1B2A4A" font-size="11" font-weight="bold">Source</text>
+
+  <!-- Router 1 -->
+  <rect x="230" y="55" width="90" height="36" rx="4" fill="#DAE5F0" stroke="#4682B4" stroke-width="2"/>
+  <text x="275" y="78" text-anchor="middle" fill="#2C5282" font-size="11" font-weight="bold">Router 1</text>
+
+  <!-- Router 2 -->
+  <rect x="440" y="55" width="90" height="36" rx="4" fill="#DAE5F0" stroke="#4682B4" stroke-width="2"/>
+  <text x="485" y="78" text-anchor="middle" fill="#2C5282" font-size="11" font-weight="bold">Router 2</text>
+
+  <!-- Router 3 -->
+  <rect x="650" y="55" width="90" height="36" rx="4" fill="#DAE5F0" stroke="#4682B4" stroke-width="2"/>
+  <text x="695" y="78" text-anchor="middle" fill="#2C5282" font-size="11" font-weight="bold">Router 3</text>
+
+  <!-- Destination -->
+  <rect x="750" y="300" width="90" height="36" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="795" y="323" text-anchor="middle" fill="#2E7D32" font-size="11" font-weight="bold">Destination</text>
+
+  <!-- Row labels -->
+  <text x="15" y="145" fill="#5A6A7A" font-size="10">Probe 1</text>
+  <text x="15" y="215" fill="#5A6A7A" font-size="10">Probe 2</text>
+  <text x="15" y="285" fill="#5A6A7A" font-size="10">Probe 3</text>
+
+  <!-- Horizontal dividers -->
+  <line x1="80" y1="108" x2="840" y2="108" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="80" y1="178" x2="840" y2="178" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="80" y1="248" x2="840" y2="248" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Probe 1: TTL=1 → Router 1 → ICMP Time Exceeded -->
+  <line x1="110" y1="140" x2="228" y2="140" stroke="#1B2A4A" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="170" y="133" text-anchor="middle" fill="#1B2A4A" font-size="10">TTL=1</text>
+  <text x="275" y="145" text-anchor="middle" fill="#B33F40" font-size="9">TTL expires</text>
+  <line x1="228" y1="155" x2="112" y2="155" stroke="#B33F40" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-red)"/>
+  <text x="170" y="170" text-anchor="middle" fill="#B33F40" font-size="9">ICMP Time Exceeded</text>
+
+  <!-- Probe 2: TTL=2 → Router 1 → Router 2 → ICMP Time Exceeded -->
+  <line x1="110" y1="210" x2="320" y2="210" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="320" y1="210" x2="438" y2="210" stroke="#1B2A4A" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="170" y="203" text-anchor="middle" fill="#1B2A4A" font-size="10">TTL=2</text>
+  <text x="380" y="203" text-anchor="middle" fill="#5A6A7A" font-size="9">TTL=1</text>
+  <text x="485" y="215" text-anchor="middle" fill="#B33F40" font-size="9">TTL expires</text>
+  <line x1="438" y1="225" x2="112" y2="225" stroke="#B33F40" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-red)"/>
+  <text x="275" y="240" text-anchor="middle" fill="#B33F40" font-size="9">ICMP Time Exceeded</text>
+
+  <!-- Probe 3: TTL=3 → Router 1 → Router 2 → Router 3 / Destination → RST -->
+  <line x1="110" y1="280" x2="320" y2="280" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="320" y1="280" x2="530" y2="280" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="530" y1="280" x2="738" y2="280" stroke="#1B2A4A" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="170" y="273" text-anchor="middle" fill="#1B2A4A" font-size="10">TTL=3</text>
+  <text x="380" y="273" text-anchor="middle" fill="#5A6A7A" font-size="9">TTL=2</text>
+  <text x="590" y="273" text-anchor="middle" fill="#5A6A7A" font-size="9">TTL=1</text>
+
+  <!-- Destination response -->
+  <line x1="748" y1="300" x2="748" y2="295" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="748" y1="295" x2="112" y2="295" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-grn)"/>
+  <text x="430" y="310" text-anchor="middle" fill="#2E7D32" font-size="9">ICMP Port Unreachable / TCP RST</text>
+
+  <!-- Annotation -->
+  <rect x="120" y="340" width="620" height="30" rx="4" fill="#F7F9FC" stroke="#B0BEC5" stroke-width="1"/>
+  <text x="430" y="360" text-anchor="middle" fill="#455A64" font-size="10">Each probe increments TTL by 1. Intermediate routers reply with ICMP Time Exceeded when TTL reaches 0.</text>
+</svg>

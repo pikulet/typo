@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="a-navy" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1B2A4A"/>
+    </marker>
+    <marker id="a-amber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#C67A00"/>
+    </marker>
+    <marker id="a-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#B33F40"/>
+    </marker>
+    <marker id="a-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#4682B4"/>
+    </marker>
+  </defs>
+
+  <rect width="860" height="400" fill="white"/>
+
+  <!-- Divider -->
+  <line x1="430" y1="10" x2="430" y2="390" stroke="#B0BEC5" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- LEFT PANEL: UDP Traceroute -->
+  <text x="215" y="30" text-anchor="middle" fill="#C67A00" font-size="14" font-weight="bold">UDP Traceroute</text>
+
+  <!-- Nodes -->
+  <rect x="20" y="55" width="80" height="32" rx="4" fill="#FFF3E0" stroke="#C67A00" stroke-width="2"/>
+  <text x="60" y="76" text-anchor="middle" fill="#C67A00" font-size="10" font-weight="bold">Source</text>
+
+  <rect x="160" y="55" width="80" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="200" y="76" text-anchor="middle" fill="#1B2A4A" font-size="10">Router</text>
+
+  <rect x="310" y="55" width="90" height="32" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="355" y="76" text-anchor="middle" fill="#2E7D32" font-size="10" font-weight="bold">Destination</text>
+
+  <!-- Probe packet label -->
+  <rect x="30" y="110" width="200" height="22" rx="3" fill="#FFF8E1" stroke="#C67A00" stroke-width="1"/>
+  <text x="130" y="125" text-anchor="middle" fill="#C67A00" font-size="9">UDP / unused port (e.g. 10293)</text>
+
+  <!-- Probe 1: TTL=1 to Router -->
+  <line x1="100" y1="155" x2="158" y2="155" stroke="#C67A00" stroke-width="2" marker-end="url(#a-amber)"/>
+  <text x="130" y="148" text-anchor="middle" fill="#C67A00" font-size="9">TTL=1</text>
+  <line x1="158" y1="168" x2="102" y2="168" stroke="#B33F40" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a-red)"/>
+  <text x="130" y="183" text-anchor="middle" fill="#B33F40" font-size="8">ICMP Time Exceeded</text>
+
+  <!-- Probe 2: TTL=2 to Destination -->
+  <line x1="100" y1="220" x2="240" y2="220" stroke="#C67A00" stroke-width="2"/>
+  <line x1="240" y1="220" x2="308" y2="220" stroke="#C67A00" stroke-width="2" marker-end="url(#a-amber)"/>
+  <text x="130" y="213" text-anchor="middle" fill="#C67A00" font-size="9">TTL=2</text>
+
+  <!-- Destination response -->
+  <line x1="308" y1="240" x2="102" y2="240" stroke="#B33F40" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a-red)"/>
+  <text x="205" y="256" text-anchor="middle" fill="#B33F40" font-size="9" font-weight="bold">ICMP Port Unreachable</text>
+  <text x="205" y="270" text-anchor="middle" fill="#5A6A7A" font-size="8">(no service on random port)</text>
+
+  <!-- UDP annotation -->
+  <rect x="30" y="295" width="370" height="40" rx="4" fill="#FFF8E1" stroke="#C67A00" stroke-width="1"/>
+  <text x="215" y="312" text-anchor="middle" fill="#455A64" font-size="9">Destination detection: sends UDP to unused port.</text>
+  <text x="215" y="326" text-anchor="middle" fill="#455A64" font-size="9">No service listening = ICMP Port Unreachable.</text>
+
+  <!-- RIGHT PANEL: TCP Traceroute -->
+  <text x="645" y="30" text-anchor="middle" fill="#4682B4" font-size="14" font-weight="bold">TCP Traceroute</text>
+
+  <!-- Nodes -->
+  <rect x="450" y="55" width="80" height="32" rx="4" fill="#DAE5F0" stroke="#4682B4" stroke-width="2"/>
+  <text x="490" y="76" text-anchor="middle" fill="#4682B4" font-size="10" font-weight="bold">Source</text>
+
+  <rect x="590" y="55" width="80" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="630" y="76" text-anchor="middle" fill="#1B2A4A" font-size="10">Router</text>
+
+  <rect x="740" y="55" width="90" height="32" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="785" y="76" text-anchor="middle" fill="#2E7D32" font-size="10" font-weight="bold">Destination</text>
+
+  <!-- Probe packet label -->
+  <rect x="460" y="110" width="200" height="22" rx="3" fill="#E3F2FD" stroke="#4682B4" stroke-width="1"/>
+  <text x="560" y="125" text-anchor="middle" fill="#4682B4" font-size="9">TCP SYN / unused port</text>
+
+  <!-- Probe 1: TTL=1 to Router -->
+  <line x1="530" y1="155" x2="588" y2="155" stroke="#4682B4" stroke-width="2" marker-end="url(#a-blue)"/>
+  <text x="560" y="148" text-anchor="middle" fill="#4682B4" font-size="9">TTL=1</text>
+  <line x1="588" y1="168" x2="532" y2="168" stroke="#B33F40" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a-red)"/>
+  <text x="560" y="183" text-anchor="middle" fill="#B33F40" font-size="8">ICMP Time Exceeded</text>
+
+  <!-- Probe 2: TTL=2 to Destination -->
+  <line x1="530" y1="220" x2="670" y2="220" stroke="#4682B4" stroke-width="2"/>
+  <line x1="670" y1="220" x2="738" y2="220" stroke="#4682B4" stroke-width="2" marker-end="url(#a-blue)"/>
+  <text x="560" y="213" text-anchor="middle" fill="#4682B4" font-size="9">TTL=2</text>
+
+  <!-- Destination response: TCP RST -->
+  <line x1="738" y1="240" x2="532" y2="240" stroke="#B33F40" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a-red)"/>
+  <text x="635" y="256" text-anchor="middle" fill="#B33F40" font-size="9" font-weight="bold">TCP RST</text>
+  <text x="635" y="270" text-anchor="middle" fill="#5A6A7A" font-size="8">(unexpected SYN, no handshake)</text>
+
+  <!-- TCP annotation -->
+  <rect x="460" y="295" width="370" height="40" rx="4" fill="#E3F2FD" stroke="#4682B4" stroke-width="1"/>
+  <text x="645" y="312" text-anchor="middle" fill="#455A64" font-size="9">Destination detection: sends TCP SYN to unused port.</text>
+  <text x="645" y="326" text-anchor="middle" fill="#455A64" font-size="9">No service = TCP RST (or ICMP Port Unreachable).</text>
+
+  <!-- Footer -->
+  <rect x="180" y="355" width="500" height="30" rx="4" fill="#F7F9FC" stroke="#B0BEC5" stroke-width="1"/>
+  <text x="430" y="375" text-anchor="middle" fill="#455A64" font-size="10">Both use the same TTL expiry mechanism. Only the probe packet type and final response differ.</text>
+</svg>

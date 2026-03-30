@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#64748b" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#475569" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="pipeEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="340" fill="#fafafa" rx="6"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" font-size="15" font-weight="600" fill="#334155">Bandwidth-Delay Product (BDP)</text>
+
+  <!-- Singapore label -->
+  <rect x="30" y="88" width="100" height="36" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="80" y="111" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Singapore</text>
+  <text x="80" y="136" text-anchor="middle" font-size="10" fill="#64748b">DB Source</text>
+
+  <!-- United States label -->
+  <rect x="690" y="88" width="100" height="36" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="740" y="111" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">United States</text>
+  <text x="740" y="136" text-anchor="middle" font-size="10" fill="#64748b">DB Destination</text>
+
+  <!-- Network pipe - outer rectangle -->
+  <rect x="145" y="72" width="530" height="68" rx="4" fill="url(#pipeGrad)" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- Pipe top/bottom edges (thicker lines to suggest a tube) -->
+  <line x1="145" y1="72" x2="675" y2="72" stroke="url(#pipeEdge)" stroke-width="2.5"/>
+  <line x1="145" y1="140" x2="675" y2="140" stroke="url(#pipeEdge)" stroke-width="2.5"/>
+
+  <!-- In-flight packets (amber squares) -->
+  <rect x="165" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.9"/>
+  <rect x="200" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.9"/>
+  <rect x="235" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.85"/>
+  <rect x="270" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.8"/>
+  <rect x="305" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.75"/>
+  <rect x="340" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.7"/>
+  <rect x="375" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.65"/>
+  <rect x="410" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.6"/>
+  <rect x="445" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.55"/>
+  <rect x="480" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.5"/>
+  <rect x="515" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.45"/>
+  <rect x="550" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.4"/>
+  <rect x="585" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.35"/>
+  <rect x="620" y="90" width="24" height="24" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="1" opacity="0.3"/>
+
+  <!-- Packet label inside pipe -->
+  <text x="410" y="130" text-anchor="middle" font-size="10" fill="#78716c" font-style="italic">in-flight data packets</text>
+
+  <!-- Bandwidth dimension (vertical, left side) -->
+  <line x1="137" y1="72" x2="137" y2="140" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="133" y1="72" x2="141" y2="72" stroke="#64748b" stroke-width="1"/>
+  <line x1="133" y1="140" x2="141" y2="140" stroke="#64748b" stroke-width="1"/>
+  <text x="118" y="110" text-anchor="middle" font-size="11" fill="#475569" font-weight="500" transform="rotate(-90, 118, 110)">Bandwidth</text>
+
+  <!-- RTT dimension (horizontal, below pipe) -->
+  <line x1="145" y1="156" x2="675" y2="156" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="145" y1="152" x2="145" y2="160" stroke="#64748b" stroke-width="1"/>
+  <line x1="675" y1="152" x2="675" y2="160" stroke="#64748b" stroke-width="1"/>
+  <!-- Arrowheads for RTT -->
+  <polygon points="145,156 152,153 152,159" fill="#64748b"/>
+  <polygon points="675,156 668,153 668,159" fill="#64748b"/>
+  <text x="410" y="172" text-anchor="middle" font-size="12" fill="#475569" font-weight="500">RTT (Round-Trip Time)</text>
+
+  <!-- Direction arrow -->
+  <line x1="165" y1="54" x2="650" y2="54" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="410" y="48" text-anchor="middle" font-size="10" fill="#94a3b8">Data flow</text>
+
+  <!-- BDP formula box -->
+  <rect x="160" y="196" width="500" height="44" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="410" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="#334155">
+    Bandwidth-Delay Product (BDP)  =  Bandwidth  x  RTT
+  </text>
+  <text x="410" y="232" text-anchor="middle" font-size="11" fill="#64748b">The volume of data the network can hold in transit at any moment</text>
+
+  <!-- Annotation -->
+  <rect x="110" y="260" width="600" height="56" rx="6" fill="#fffbeb" stroke="#fbbf24" stroke-width="1" opacity="0.8"/>
+  <text x="410" y="281" text-anchor="middle" font-size="11.5" fill="#92400e" font-weight="500">To maintain throughput, this much data must be in-flight at all times.</text>
+  <text x="410" y="299" text-anchor="middle" font-size="11" fill="#a16207">A longer RTT means a bigger "pipe" to fill, requiring more packets in transit.</text>
+
+</svg>

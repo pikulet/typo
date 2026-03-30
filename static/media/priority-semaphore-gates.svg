@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1B2A4A"/>
+    </marker>
+    <marker id="arrow-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrow-a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#C67A00"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="420" fill="white"/>
+
+  <!-- Outermost box: Semaphore L -->
+  <rect x="200" y="60" width="560" height="280" rx="6" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="2.5"/>
+  <text x="480" y="88" text-anchor="middle" fill="#1B2A4A" font-size="13" font-weight="bold">Semaphore L</text>
+  <text x="480" y="104" text-anchor="middle" fill="#5A6A7A" font-size="11">Low-priority gate (Type A only)</text>
+
+  <!-- Middle box: Semaphore H -->
+  <rect x="300" y="120" width="380" height="180" rx="5" fill="#DAE5F0" stroke="#4682B4" stroke-width="2"/>
+  <text x="490" y="146" text-anchor="middle" fill="#2C5282" font-size="13" font-weight="bold">Semaphore H</text>
+  <text x="490" y="162" text-anchor="middle" fill="#5A6A7A" font-size="11">High-priority gate (A and B)</text>
+
+  <!-- Innermost box: Semaphore N -->
+  <rect x="420" y="180" width="160" height="80" rx="4" fill="#B8C9DC" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="500" y="216" text-anchor="middle" fill="#1B2A4A" font-size="13" font-weight="bold">Semaphore N</text>
+  <text x="500" y="234" text-anchor="middle" fill="#2C5282" font-size="11">Critical Section</text>
+
+  <!-- wait/signal labels on gates -->
+  <!-- L gate -->
+  <text x="193" y="205" text-anchor="end" fill="#1B2A4A" font-size="10">wait(L)</text>
+  <text x="767" y="205" text-anchor="start" fill="#1B2A4A" font-size="10">signal(L)</text>
+
+  <!-- H gate -->
+  <text x="293" y="215" text-anchor="end" fill="#4682B4" font-size="10">wait(H)</text>
+  <text x="687" y="215" text-anchor="start" fill="#4682B4" font-size="10">signal(H)</text>
+
+  <!-- N gate -->
+  <text x="413" y="225" text-anchor="end" fill="#1B2A4A" font-size="10">wait(N)</text>
+  <text x="587" y="225" text-anchor="start" fill="#1B2A4A" font-size="10">signal(N)</text>
+
+  <!-- Type A (low priority) — enters through all three gates -->
+  <!-- Label -->
+  <rect x="16" y="238" width="130" height="22" rx="3" fill="#FFF3E0" stroke="#C67A00" stroke-width="1.5"/>
+  <text x="81" y="253" text-anchor="middle" fill="#C67A00" font-size="11" font-weight="bold">Type A (low pri)</text>
+
+  <!-- A arrow: left edge -> L boundary -->
+  <line x1="150" y1="249" x2="198" y2="249" stroke="#C67A00" stroke-width="2" marker-end="url(#arrow-a)"/>
+  <!-- A arrow: L boundary -> H boundary -->
+  <line x1="204" y1="249" x2="298" y2="249" stroke="#C67A00" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-a)"/>
+  <!-- A arrow: H boundary -> N boundary -->
+  <line x1="304" y1="249" x2="418" y2="237" stroke="#C67A00" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-a)"/>
+
+  <!-- A exit arrows -->
+  <line x1="582" y1="237" x2="678" y2="249" stroke="#C67A00" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-a)"/>
+  <line x1="684" y1="249" x2="758" y2="249" stroke="#C67A00" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-a)"/>
+  <line x1="764" y1="249" x2="830" y2="249" stroke="#C67A00" stroke-width="2" marker-end="url(#arrow-a)"/>
+
+  <!-- Type B (high priority) — bypasses L, enters at H -->
+  <!-- Label -->
+  <rect x="16" y="160" width="130" height="22" rx="3" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="81" y="175" text-anchor="middle" fill="#2E7D32" font-size="11" font-weight="bold">Type B (high pri)</text>
+
+  <!-- B arrow: left edge -> curves over L and enters at H -->
+  <line x1="150" y1="171" x2="195" y2="171" stroke="#2E7D32" stroke-width="2" marker-end="url(#arrow-b)"/>
+  <!-- B bypasses L: arc over the L boundary -->
+  <path d="M 199 171 Q 245 40, 298 190" fill="none" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-b)"/>
+  <text x="230" y="80" fill="#2E7D32" font-size="10" font-style="italic">bypasses L</text>
+
+  <!-- B arrow: H boundary -> N boundary -->
+  <line x1="304" y1="195" x2="418" y2="210" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-b)"/>
+
+  <!-- B exit arrows -->
+  <line x1="582" y1="210" x2="678" y2="195" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-b)"/>
+  <!-- B exits H, then bypasses L going out -->
+  <path d="M 682 195 Q 730 40, 830 171" fill="none" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-b)"/>
+
+  <!-- Annotation -->
+  <rect x="120" y="365" width="660" height="40" rx="4" fill="#F7F9FC" stroke="#B0BEC5" stroke-width="1"/>
+  <text x="450" y="390" text-anchor="middle" fill="#455A64" font-size="11">At most one A-type process can be blocked at wait(H), because L is binary (init = 1).</text>
+
+  <!-- Legend: semaphore init values -->
+  <text x="810" y="380" text-anchor="start" fill="#5A6A7A" font-size="10">N = 1</text>
+  <text x="810" y="393" text-anchor="start" fill="#5A6A7A" font-size="10">H = 1</text>
+  <text x="810" y="406" text-anchor="start" fill="#5A6A7A" font-size="10">L = 1</text>
+</svg>

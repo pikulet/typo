@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1B2A4A"/>
+    </marker>
+    <marker id="arr-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#B33F40"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="580" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#1B2A4A" font-size="16" font-weight="bold">Ultimatum Game</text>
+
+  <!-- Proposer node -->
+  <rect x="30" y="230" width="160" height="80" rx="5" fill="#1B2A4A"/>
+  <text x="110" y="276" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Proposer</text>
+
+  <!-- Branch lines from Proposer -->
+  <!-- Upper branch: Offer 50/50 -->
+  <line x1="190" y1="252" x2="320" y2="130" stroke="#1B2A4A" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="230" y="172" fill="#1B2A4A" font-size="13">Offer 50/50</text>
+
+  <!-- Lower branch: Offer 90/10 -->
+  <line x1="190" y1="288" x2="320" y2="410" stroke="#1B2A4A" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="225" y="370" fill="#1B2A4A" font-size="13">Offer 90/10</text>
+
+  <!-- Responder node (50/50) -->
+  <rect x="328" y="90" width="160" height="80" rx="5" fill="#4682B4"/>
+  <text x="408" y="136" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Responder</text>
+
+  <!-- Responder node (90/10) -->
+  <rect x="328" y="370" width="160" height="80" rx="5" fill="#4682B4"/>
+  <text x="408" y="416" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Responder</text>
+
+  <!-- 50/50 Accept branch -->
+  <line x1="488" y1="112" x2="618" y2="70" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arr-g)"/>
+  <text x="536" y="80" fill="#2E7D32" font-size="12" font-weight="bold">Accept</text>
+
+  <!-- 50/50 Accept payoff -->
+  <rect x="626" y="36" width="180" height="76" rx="5" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="716" y="68" text-anchor="middle" fill="#2E7D32" font-size="16" font-weight="bold">$50 / $50</text>
+  <text x="716" y="92" text-anchor="middle" fill="#5A6A7A" font-size="11">P: $50, R: $50</text>
+
+  <!-- 50/50 Reject branch -->
+  <line x1="488" y1="148" x2="618" y2="186" stroke="#B33F40" stroke-width="2.5" marker-end="url(#arr-r)"/>
+  <text x="538" y="180" fill="#B33F40" font-size="12" font-weight="bold">Reject</text>
+
+  <!-- 50/50 Reject payoff -->
+  <rect x="626" y="154" width="180" height="76" rx="5" fill="#FDEAEA" stroke="#B33F40" stroke-width="2"/>
+  <text x="716" y="186" text-anchor="middle" fill="#B33F40" font-size="16" font-weight="bold">$0 / $0</text>
+  <text x="716" y="210" text-anchor="middle" fill="#5A6A7A" font-size="11">Both get nothing</text>
+
+  <!-- 90/10 Accept branch -->
+  <line x1="488" y1="392" x2="618" y2="350" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arr-g)"/>
+  <text x="536" y="360" fill="#2E7D32" font-size="12" font-weight="bold">Accept</text>
+
+  <!-- 90/10 Accept payoff -->
+  <rect x="626" y="314" width="180" height="76" rx="5" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="716" y="346" text-anchor="middle" fill="#2E7D32" font-size="16" font-weight="bold">$90 / $10</text>
+  <text x="716" y="370" text-anchor="middle" fill="#5A6A7A" font-size="11">P: $90, R: $10</text>
+
+  <!-- 90/10 Reject branch -->
+  <line x1="488" y1="428" x2="618" y2="466" stroke="#B33F40" stroke-width="2.5" marker-end="url(#arr-r)"/>
+  <text x="538" y="460" fill="#B33F40" font-size="12" font-weight="bold">Reject</text>
+
+  <!-- 90/10 Reject payoff -->
+  <rect x="626" y="432" width="180" height="76" rx="5" fill="#FDEAEA" stroke="#B33F40" stroke-width="2"/>
+  <text x="716" y="464" text-anchor="middle" fill="#B33F40" font-size="16" font-weight="bold">$0 / $0</text>
+  <text x="716" y="488" text-anchor="middle" fill="#5A6A7A" font-size="11">Both get nothing</text>
+
+  <!-- Annotation: "Irrational but observed" callout on 90/10 Reject -->
+  <rect x="700" y="516" width="190" height="42" rx="4" fill="#F7F9FC" stroke="#B33F40" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="795" y="535" text-anchor="middle" fill="#B33F40" font-size="11" font-style="italic">Irrational but</text>
+  <text x="795" y="550" text-anchor="middle" fill="#B33F40" font-size="11" font-style="italic">commonly observed</text>
+  <!-- Dashed line from annotation to reject node -->
+  <line x1="756" y1="516" x2="740" y2="508" stroke="#B33F40" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Bottom caption -->
+  <rect x="140" y="544" width="500" height="28" rx="4" fill="#F7F9FC" stroke="#B0BEC5" stroke-width="1"/>
+  <text x="390" y="563" text-anchor="middle" fill="#455A64" font-size="11">Responders often reject unfair offers, preferring $0 over an unequal split</text>
+</svg>

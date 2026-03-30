@@ -1,0 +1,56 @@
+{{- $title := .Get "title" -}}
+{{- $description := .Get "description" -}}
+{{- $link := .Get "link" -}}
+{{- $year := .Get "year" -}}
+{{- $star := .Get "star" -}}
+{{- $tagsStr := .Get "tags" -}}
+{{- $tags := slice -}}
+{{- if $tagsStr -}}
+  {{- $tags = split $tagsStr "," -}}
+{{- end -}}
+{{- $imagesStr := .Get "images" -}}
+{{- $images := slice -}}
+{{- if $imagesStr -}}
+  {{- $images = split $imagesStr "," -}}
+{{- end -}}
+{{- $id := printf "proj-%s" ($title | urlize) -}}
+
+<div class="project-card">
+  {{- if $images }}
+  <div class="project-carousel" id="{{ $id }}-carousel">
+    <div class="carousel-track">
+      {{- range $images }}
+      <img src="{{ strings.TrimSpace . }}" alt="{{ $title }}" class="carousel-slide">
+      {{- end }}
+    </div>
+    {{- if gt (len $images) 1 }}
+    <button class="carousel-btn carousel-prev" onclick="carouselMove('{{ $id }}-carousel', -1)" aria-label="Previous">&#8249;</button>
+    <button class="carousel-btn carousel-next" onclick="carouselMove('{{ $id }}-carousel', 1)" aria-label="Next">&#8250;</button>
+    <div class="carousel-dots">
+      {{- range $i, $_ := $images }}
+      <span class="carousel-dot{{ if eq $i 0 }} active{{ end }}" onclick="carouselGoto('{{ $id }}-carousel', {{ $i }})"></span>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+  {{- end }}
+  <div class="project-info">
+    <div class="project-header">
+      {{- if $link }}
+      <a href="{{ $link }}" class="project-title">{{ $title }}</a>
+      {{- else }}
+      <span class="project-title">{{ $title }}</span>
+      {{- end }}
+      {{- if $star }}<span class="project-star" aria-label="starred">&#9733;</span>{{- end }}
+    </div>
+    {{- if or $tags $year }}
+    <div class="project-meta">
+      {{- range $tags }}
+      <span class="project-tag project-tag--{{ strings.TrimSpace . | urlize }}">{{ strings.TrimSpace . }}</span>
+      {{- end }}
+      {{- if $year }}<span class="project-year">{{ $year }}</span>{{- end }}
+    </div>
+    {{- end }}
+    <p class="project-desc">{{ $description }}</p>
+  </div>
+</div>

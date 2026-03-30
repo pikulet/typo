@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace">
+  <defs>
+    <marker id="arr-amber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#C67A00"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="340" fill="white"/>
+
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" fill="#1B2A4A" font-size="14" font-weight="bold">Transaction Structure: Dummy Statement Injection</text>
+
+  <!-- Left panel: Original Transaction -->
+  <rect x="50" y="55" width="240" height="220" rx="4" fill="#F7F9FC" stroke="#4682B4" stroke-width="2"/>
+  <text x="170" y="78" text-anchor="middle" fill="#4682B4" font-size="12" font-weight="bold">Original Transaction</text>
+
+  <!-- Left items -->
+  <rect x="85" y="100" width="170" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="170" y="121" text-anchor="middle" fill="#1B2A4A" font-size="12">BEGIN</text>
+
+  <rect x="85" y="148" width="170" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="170" y="169" text-anchor="middle" fill="#1B2A4A" font-size="12">STMT</text>
+
+  <rect x="85" y="196" width="170" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="170" y="217" text-anchor="middle" fill="#1B2A4A" font-size="12">COMMIT</text>
+
+  <!-- Right panel: With Dummy Statement -->
+  <rect x="410" y="55" width="240" height="260" rx="4" fill="#F7F9FC" stroke="#4682B4" stroke-width="2"/>
+  <text x="530" y="78" text-anchor="middle" fill="#4682B4" font-size="12" font-weight="bold">With Dummy Statement</text>
+
+  <!-- Right items -->
+  <rect x="445" y="100" width="170" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="530" y="121" text-anchor="middle" fill="#1B2A4A" font-size="12">BEGIN</text>
+
+  <!-- Dummy - highlighted -->
+  <rect x="445" y="148" width="170" height="32" rx="4" fill="#FFF3E0" stroke="#C67A00" stroke-width="2"/>
+  <text x="530" y="169" text-anchor="middle" fill="#C67A00" font-size="12" font-weight="bold">dummy</text>
+
+  <rect x="445" y="196" width="170" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="530" y="217" text-anchor="middle" fill="#1B2A4A" font-size="12">STMT</text>
+
+  <rect x="445" y="244" width="170" height="32" rx="4" fill="#EEF2F7" stroke="#1B2A4A" stroke-width="1.5"/>
+  <text x="530" y="265" text-anchor="middle" fill="#1B2A4A" font-size="12">COMMIT</text>
+
+  <!-- Arrow annotation pointing to dummy -->
+  <line x1="660" y1="164" x2="623" y2="164" stroke="#C67A00" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+  <text x="665" y="160" fill="#C67A00" font-size="10" font-weight="bold">Inserted by B</text>
+  <text x="665" y="174" fill="#C67A00" font-size="10">to signal copy</text>
+
+  <!-- Arrow between panels -->
+  <line x1="295" y1="175" x2="403" y2="175" stroke="#1B2A4A" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="349" y="168" text-anchor="middle" fill="#5A6A7A" font-size="18">&#8594;</text>
+
+  <!-- Bottom annotation -->
+  <rect x="100" y="300" width="500" height="28" rx="4" fill="#F7F9FC" stroke="#B0BEC5" stroke-width="1"/>
+  <text x="350" y="319" text-anchor="middle" fill="#455A64" font-size="11">Pipeline detects dummy statement and ignores the replicated transaction.</text>
+</svg>

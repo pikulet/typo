@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="'SF Mono', 'Consolas', 'Liberation Mono', monospace">
+  <defs>
+    <marker id="arrowRight" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#64748b"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M8,0 L0,3 L8,6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="520" fill="#fafafa" rx="4"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">BBR's Two-Metric Model and Optimal Operating Point</text>
+
+  <!-- ==================== NETWORK PATH SECTION ==================== -->
+
+  <!-- Network path background -->
+  <rect x="30" y="50" width="740" height="170" fill="#f8fafc" rx="6" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Node positions: Sender(100), R1(250), R2(400), R3(550), Receiver(700) -->
+
+  <!-- Links between nodes -->
+  <line x1="148" y1="110" x2="210" y2="110" stroke="#94a3b8" stroke-width="2.5"/>
+  <line x1="290" y1="110" x2="352" y2="110" stroke="#94a3b8" stroke-width="2.5"/>
+  <!-- Bottleneck link (amber) -->
+  <line x1="448" y1="110" x2="510" y2="110" stroke="#d97706" stroke-width="4" stroke-dasharray="none"/>
+  <line x1="590" y1="110" x2="652" y2="110" stroke="#94a3b8" stroke-width="2.5"/>
+
+  <!-- Sender node -->
+  <rect x="60" y="86" width="88" height="48" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="104" y="114" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Sender</text>
+
+  <!-- Router 1 -->
+  <rect x="210" y="86" width="80" height="48" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="250" y="108" text-anchor="middle" font-size="10" fill="#475569">Router</text>
+  <text x="250" y="122" text-anchor="middle" font-size="10" fill="#475569">1</text>
+
+  <!-- Router 2 (bottleneck) -->
+  <rect x="352" y="86" width="96" height="48" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="400" y="108" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">Router 2</text>
+  <text x="400" y="122" text-anchor="middle" font-size="9" fill="#92400e">(bottleneck)</text>
+
+  <!-- Router 3 -->
+  <rect x="510" y="86" width="80" height="48" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="550" y="108" text-anchor="middle" font-size="10" fill="#475569">Router</text>
+  <text x="550" y="122" text-anchor="middle" font-size="10" fill="#475569">3</text>
+
+  <!-- Receiver node -->
+  <rect x="652" y="86" width="88" height="48" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="696" y="114" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Receiver</text>
+
+  <!-- BtlBw label (amber, pointing to bottleneck link) -->
+  <text x="475" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#b45309">BtlBw</text>
+  <text x="475" y="68" text-anchor="middle" font-size="9" fill="#92400e">(Bottleneck Bandwidth)</text>
+
+  <!-- RTprop bracket spanning the full round-trip path -->
+  <!-- Forward path bracket line -->
+  <line x1="104" y1="152" x2="104" y2="162" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="104" y1="162" x2="696" y2="162" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="696" y1="152" x2="696" y2="162" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- Return path arrow -->
+  <line x1="696" y1="170" x2="104" y2="170" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"
+        marker-end="url(#arrowLeft)"/>
+
+  <!-- Forward arrow markers -->
+  <line x1="104" y1="162" x2="696" y2="162" stroke="#64748b" stroke-width="1.5"
+        marker-end="url(#arrowRight)"/>
+
+  <!-- RTprop label -->
+  <rect x="305" y="185" width="190" height="22" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="400" y="200" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">RTprop (Round-Trip Propagation Time)</text>
+
+  <!-- Forward/return labels -->
+  <text x="200" y="157" text-anchor="middle" font-size="8" fill="#94a3b8">forward path</text>
+  <text x="600" y="179" text-anchor="middle" font-size="8" fill="#94a3b8">return path</text>
+
+  <!-- ==================== THROUGHPUT PLOT SECTION ==================== -->
+
+  <!-- Plot area -->
+  <rect x="30" y="240" width="740" height="270" fill="#f8fafc" rx="6" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Plot subtitle -->
+  <text x="400" y="265" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Throughput vs. Inflight Data</text>
+
+  <!-- Axes -->
+  <!-- Y-axis -->
+  <line x1="120" y1="290" x2="120" y2="470" stroke="#475569" stroke-width="1.5"/>
+  <!-- X-axis -->
+  <line x1="120" y1="470" x2="710" y2="470" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowRight)"/>
+
+  <!-- Y-axis arrow -->
+  <polygon points="120,285 116,295 124,295" fill="#475569"/>
+  <!-- X-axis arrow -->
+  <polygon points="715,470 705,466 705,474" fill="#475569"/>
+
+  <!-- Axis labels -->
+  <text x="60" y="385" text-anchor="middle" font-size="10" font-weight="600" fill="#475569" transform="rotate(-90,60,385)">Throughput</text>
+  <text x="415" y="498" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Inflight Data</text>
+
+  <!-- BtlBw line (dashed amber horizontal line at throughput peak) -->
+  <line x1="120" y1="315" x2="700" y2="315" stroke="#d97706" stroke-width="1" stroke-dasharray="6,4" opacity="0.6"/>
+  <text x="710" y="319" text-anchor="start" font-size="9" fill="#b45309" opacity="0.8">BtlBw</text>
+
+  <!-- BDP vertical line -->
+  <line x1="365" y1="315" x2="365" y2="470" stroke="#64748b" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <text x="365" y="485" text-anchor="middle" font-size="9" fill="#64748b">BDP</text>
+
+  <!-- Throughput curve -->
+  <!-- Rising linear portion -->
+  <path d="M 120,470
+           L 180,435
+           L 240,400
+           L 300,365
+           L 340,335
+           Q 355,318 365,315
+           Q 380,312 420,313
+           Q 480,314 540,315
+           L 600,315
+           L 660,315
+           L 700,315"
+        fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Optimal operating point dot -->
+  <circle cx="365" cy="315" r="6" fill="#dc2626" stroke="#fff" stroke-width="2"/>
+
+  <!-- Optimal point label -->
+  <line x1="365" y1="308" x2="365" y2="292" stroke="#dc2626" stroke-width="1"/>
+  <rect x="290" y="278" width="150" height="16" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="365" y="290" text-anchor="middle" font-size="9" font-weight="600" fill="#dc2626">Optimal Operating Point</text>
+
+  <!-- Region labels -->
+  <!-- Bandwidth-limited region (left) -->
+  <rect x="165" y="395" width="130" height="30" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="230" y="407" text-anchor="middle" font-size="9" fill="#1e40af">bandwidth-</text>
+  <text x="230" y="419" text-anchor="middle" font-size="9" fill="#1e40af">limited</text>
+
+  <!-- Buffer-filling region (right) -->
+  <rect x="470" y="335" width="120" height="30" rx="4" fill="#fefce8" stroke="#fde68a" stroke-width="1"/>
+  <text x="530" y="347" text-anchor="middle" font-size="9" fill="#92400e">buffer-</text>
+  <text x="530" y="359" text-anchor="middle" font-size="9" fill="#92400e">filling</text>
+
+  <!-- Slope annotation on the linear portion -->
+  <text x="195" y="445" text-anchor="middle" font-size="8" fill="#6366f1" transform="rotate(-40,195,445)">slope = 1/RTprop</text>
+
+</svg>
