@@ -44,26 +44,3 @@ Privacy in our DNS traffic is important, and this is currently still a work in p
 - [An elaborate discussion on privacy; also contains information on metadata leaks like SNI](https://blog.apnic.net/2019/10/03/opinion-centralized-doh-is-bad-for-privacy-in-2019-and-beyond/)
 
 I do recommend reading and comparing the different schemes proposed to introduce privacy in DNS traffic.
-
----
-
-## Review
-
-### P0 — Spelling & Grammar
-
-1. **"Oct 2018" (line 11)** — Informal. Use "October 2018."
-2. **Missing period inside parenthetical (line 20)** — "(The SNI field is an optional extension of TLS)" needs a period inside.
-3. **"is not doing useful protection" (line 23)** — Awkward. Fix: "is not **providing** useful protection."
-4. **"facebook" (line 27)** — Capitalise: "Facebook."
-
-### P1 — Explanation Gaps
-
-1. **Why plaintext DNS is a problem (line 11)** — Never stated. Add: "Anyone on the network path can see which domains you look up."
-2. **How DoH works mechanically (line 11)** — Never explained. DoH sends DNS queries as HTTP requests over TLS on port 443.
-3. **Why SNI must be unencrypted (line 20)** — Server needs to know which certificate to present before TLS is established.
-4. **DNSSEC/DoT/DNSCrypt not differentiated (line 36)** — DNSSEC provides authenticity (not privacy), DoT provides encryption on a dedicated port, DNSCrypt its own protocol. Lumping them together is unhelpful.
-
-### P2 — Image Opportunities
-
-1. **Traditional DNS vs. DoH flow** — Side-by-side: plaintext UDP query visible to ISP vs. encrypted HTTPS query.
-2. **DNS privacy proposals comparison table** — DNS, DoH, DoT, DNSSEC, DNSCrypt across encryption, authentication, port.
