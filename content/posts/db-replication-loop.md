@@ -1,24 +1,25 @@
 ---
 title: Cyclical Transaction-based Replication
 date: "2024-02-10"
-toc: true
 showTags: true
 slug: "cyclical-replication"
 tags:
 - "cloud infrastructure"
 - "databases"
-summary: "Synchronousing two databases that are actively receiving non-sharded writes"
+summary: "Synchronising two databases that are actively receiving non-sharded writes"
 ---
 
 ## Introduction
 
 Most database clusters follow the one master multiple slaves architecture. Writes only happen to the master, while reads can happen between the master and slave.
 
-However, a multi-master application can be beneficial in cases where we have partitional writes to the database. This means that `id=1-10` are primarily written to by one group of functions, while `id=2-20` are written by another. Allowing multiple write sources is beneficial to improve performance. Another reason could be a large geographical separation in the write sources - having a write source in each continent would increase its local performance.
+However, a multi-master application can be beneficial in cases where we have partitioned writes to the database. This means that `id=1-10` are primarily written to by one group of functions, while `id=11-20` are written by another. Allowing multiple write sources is beneficial to improve performance. Another reason could be a large geographical separation in the write sources - having a write source in each continent would increase its local performance.
 
 ### Cyclical replication
 
 In a multi-master scenario, `A` is listening to transactions from `B` and vice versa. Suppose that `A` executes a transaction (`tx`) and `B` copies this transaction from `A` (`tx_copy`). Now, because `A` is also listening to `B`, `A` will attempt to replicate the `tx_copy` transaction. `A` needs to be able to detect that `tx_copy` is a copied transaction.
+
+![Cyclical replication loop between Node A and Node B](/media/replication-loop.svg)
 
 ## Binlog-based detection
 
@@ -35,6 +36,8 @@ A dummy statement can be inserted. For instance, we might insert the dummy state
 - `STMT`
 - `COMMIT`
 
+![Transaction structure before and after dummy statement injection](/media/replication-tx-structure.svg)
+
 ### UPDATE statement
 
 The goal of the dummy statement is to generate binlog traffic without impacting the actual operations. We might want to save resources by opting to use a command like `UPDATE` instead of `INSERT`. 
@@ -49,7 +52,7 @@ This solution works. While an update statement does not create significant load 
 
 Another alternative might be to consider using a blackhole (no-op) engine. When creating the table, add `engine = blackhole`.
 
-However, upon testing, mysql enforces a separate transaction on statements to blackhole tables. The transaction ends up being split up:
+However, upon testing, MySQL enforces a separate transaction on statements to blackhole tables. The transaction ends up being split up:
 
 - `BEGIN`
 - `dummy`
@@ -77,11 +80,13 @@ The GTID is of the format:
 When `A` executes a transaction to `B` (`tx`), `tx` will have a GTID like `uuid_A:1`. Upon receiving this transaction, `B` can detect that the `server_uuid` portion of the GTID is not its own. `B` will then replicate `tx` to get `tx_copy`.
 
 ### SET gtid_next
-Since we're programatically doing this replication, `B` is not actually in the same database cluster as `A`. `tx_copy` will have a GTID like `uuid_B:1`. When `A` receives this transaction, the behaviour is to (incorrectly) replicate it.
+Since we're programmatically doing this replication, `B` is not actually in the same database cluster as `A`. `tx_copy` will have a GTID like `uuid_B:1`. When `A` receives this transaction, the behaviour is to (incorrectly) replicate it.
 
 To solve this, we can use an operation like `set gtid_next` to overwrite `B`'s default transaction behaviour. Instead of writing to the binlog with `uuid_B:1`, B can execute `tx` with GTID `uuid_A:1`. 
 
 When `A` receives this transaction and sees its own uuid, it can then ignore the transaction.
+
+![GTID-based loop detection flow between Node A and Node B](/media/replication-gtid-flow.svg)
 
 ### Multiple UUIDs in the cluster
 

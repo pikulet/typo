@@ -1,7 +1,6 @@
 ---
 title: Synchronisation with Semaphores
 date: "2019-12-30"
-toc: true
 showTags: true
 slug: "triple-semaphore"
 tags:
@@ -11,9 +10,9 @@ summary: "How to give one process priority access to a semaphore"
 
 ## What are Semaphores?
 
-Semaphores are synchronisation primitives used to protect a critical section of code. The idea is that only a controlled number of processes (usually 1) can enter the **critical section**. Usually, this involves some kind of modification of data and multiple threads executing the section simultaneously could lead to a **race condition**. An analogy would be a class of students shouting their names at the same time. In the end, the teacher almost got nothing out of it.
+Semaphores are synchronisation primitives used to protect a critical section of code. The idea is that only a controlled number of processes (usually 1) can enter the **critical section**. Usually, this involves some kind of modification of data and multiple threads executing the section simultaneously could lead to a **race condition**. An analogy would be a class of students shouting their names at the same time. In the end, the teacher got almost nothing out of it.
 
-Binary semaphores work by have a process `wait` to indicate that it is in the critical section (CS), and `signal` to indicate that it is done being in the CS.
+Binary semaphores work by having a process `wait` to indicate that it is in the critical section (CS), and `signal` to indicate that it is done being in the CS. The semaphore only has two states, 0 and 1.
 
 Suppose we have a semaphore N, and two processes A and B. Each of A and B would run like this:
 
@@ -38,6 +37,8 @@ Example:
 How can we give processes of type B to be given priority access to the semaphore?
 
 ### Solution
+
+![Priority semaphore gates](/media/priority-semaphore-gates.svg)
 
 This is a 3-semaphore solution.
 - Semaphore N, the original semaphore as above
@@ -72,4 +73,27 @@ signal(L)
 
 In particular, at most one low-priority process can be blocked at `wait(H)` because of `wait(L)`. However, this doesn't guarantee that high-priority processes can always run before low-priority processes. The actual behaviour depends on thread-level scheduling. If the scheduler always lets processes of type A (low priority) run first, then there would be no priority access achieved.
 
-The high-priority semaphore is actually optional. With just L and N, the code is the **turnstile problem** with writer priority.
+The high-priority semaphore is actually optional. With just L and N, the code is the **turnstile problem** with writer priority (in The Little Book of Semaphores).
+
+
+---
+
+## Review
+
+### P0 — Spelling & Grammar
+
+1. **"How can we give processes of type B to be given priority access" (line 37)** — Grammatically broken. Fix: "How can we give processes of type B priority access to the semaphore?" or "How can processes of type B be given priority access?"
+
+### P1 — Explanation Gaps
+
+1. **Semaphore initial values never stated** — All three semaphores (N, H, L) are assumed initialised to 1, but this is never mentioned.
+2. **No walkthrough of why the solution works** — The pseudocode is presented but no step-by-step trace shows the mechanism. A concrete scenario (e.g., B1 holds H, A1 blocks at wait(H), B2 queues ahead of A1) would make the priority mechanism tangible.
+3. **"At most one low-priority process can be blocked at wait(H)" (line 74)** — Key insight stated without justification. Explain: L is binary, so only one A-type process passes `wait(L)` at a time.
+4. **"Turnstile problem with writer priority" (line 76)** — Undefined. Cite *The Little Book of Semaphores* by Allen B. Downey (freely available).
+5. **H is "actually optional" (line 76)** — Surprising given the whole solution is framed as needing three semaphores. What does H add?
+6. **"No queue or priority" (line 31)** — Implementation-dependent. Some semaphore implementations do maintain FIFO queues.
+
+### P2 — Image Opportunities
+
+1. **Scenario trace diagram** — Timeline showing 2-3 processes of each type competing for semaphores, illustrating how B-type processes "skip ahead."
+2. **Layered gate diagram** — Already present (`priority-semaphore-gates.svg`). Verify it shows B-type processes bypassing the L gate.

@@ -1,7 +1,6 @@
 ---
 title: Two Sides of the same (Bit)Coin
 date: "2021-03-15"
-toc: true
 showTags: true
 slug: "bitcoin-reflection"
 tags:
@@ -18,17 +17,19 @@ Bitcoin is a digital currency with no central authority. Instead, everyone in Si
 
 Now suppose that I want to transfer money to you, then anyone in Singapore can verify that this transaction is valid. This verification is done using the **Proof of Work** consensus algorithm.
 
-When this transaction has been confirmed, the verifier will tell everyone else that the transaction is valid. In turn, everyone else will record in their own ledger, that I have transferred $10 to you. As a token thanks for verifying the transaction, the verifier will get paid in more Bitcoins. This verifier is known as a **miner**, because the bitcoins he was paid in belonged to no one previously. Mining increases the total number of bitcoins in circulation.
+When this transaction has been confirmed, the verifier will tell everyone else that the transaction is valid. In turn, everyone else will record in their own ledger, that I have transferred $10 to you. As a token of thanks for verifying the transaction, the verifier will get paid in more Bitcoins. This verifier is known as a **miner**, because the bitcoins he was paid in belonged to no one previously. Mining increases the total number of bitcoins in circulation.
+
+![Bitcoin Transaction Flow](/media/bitcoin-transaction-flow.svg)
 
 ## Bitcoin as a Technology
 
-### Kerckhoff's Principle
+### Kerckhoffs' Principle
 
-The first time I heard of Bitcoin, it was in an introductory cybersecurity class where we learned about Kerckhoff's Principle. 
+The first time I heard of Bitcoin, it was in an introductory cybersecurity class where we learned about Kerckhoffs' Principle.
 
-> Kerckhoff's Principle is the idea that the design of a system should be as open as possible, and only the cryptographic keys should be kept secret.
+> Kerckhoffs' Principle is the idea that the design of a system should be as open as possible, and only the cryptographic keys should be kept secret.
 
-From a security perspective this openness brings about two benefits. For one, you can now reduce the system design to a numerical value: the key size. Secondly, in line with the mindset of the Open-Sourced Software (OSS) community, any **major issues with the program would be more easily detected** and reported. 
+From a security perspective this openness brings about two benefits. For one, you can now reduce the system design to a numerical value: the key size. Secondly, in line with the mindset of the Open-Source Software (OSS) community, any **major issues with the program would be more easily detected** and reported. 
 
 Surely, even if I do not 100% get the nuts and bolts of bitcoin, if there was some major issue with Bitcoin, someone would have already announced it within the last decade Bitcoin has been made public. At this point, I assumed that Bitcoin had no major issues with its technology.
 
@@ -36,11 +37,11 @@ Surely, even if I do not 100% get the nuts and bolts of bitcoin, if there was so
 
 My good impressions of Bitcoin were further fuelled by the constant mentions of distributed technologies in various classes I've taken, from a search engine class in my sophomore year and even now in my thesis project. My Computer Science training had, in many ways, subconsciously made me see decentralised tech in a positive light. 
 
-The key benefit I see is that there is **no single point of failure**. In the case of Bitcoin, it would not be possible for me to come in tomorrow and erase my $10 transfer to you. Even if I went rogue and 'deleted'(*) the entry from my ledger, majority of the Bitcoin community (i.e. everyone else in Singapore) would have that transaction on their ledger.
+The key benefit I see is that there is **no single point of failure**. In the case of Bitcoin, it would not be possible for me to come in tomorrow and erase my $10 transfer to you. Even if I went rogue and 'deleted' the entry from my ledger, majority of the Bitcoin community (i.e. everyone else in Singapore) would have that transaction on their ledger.
 
 ### Cryptographic Primitives
 
-Lastly, being an avid fan of cryptography, I was very surprised to learn that there is an actual mathematical definition on which to judge the security of Bitcoin. Bitcoin is a digital signature scheme based on **Elliptic Curve Cryptography**, and ECC is widely accepted to have **existential unforgeableability**. I hedged that statement because... who knows? Perhaps there will be new mathematical methods which disrupt our assumptions of traditional intractable (hard to solve) problems like prime factorisation and discrete logarithms.
+Lastly, being an avid fan of cryptography, I was very surprised to learn that there is an actual mathematical definition on which to judge the security of Bitcoin. Bitcoin is a digital signature scheme based on **Elliptic Curve Cryptography**, and ECC is widely accepted to have **existential unforgeability**. I hedged that statement because... who knows? Perhaps there will be new mathematical methods which disrupt our assumptions of traditional intractable (hard to solve) problems like prime factorisation and discrete logarithms.
 
 ### The Naive Approach
 
@@ -62,7 +63,7 @@ She was quick to dismiss Bitcoin Technology as a giant Ponzi scheme. The 2008 Gl
 
 It was interesting how both our majors could systematically train us to think of Bitcoin in two polarising perspectives. This sharing was very insightful for both of us - for me especially because it highlights the importance of **responsible technology**. 
 
-Any technology invented, when accessible, has real-world impacts that needs to be carefully considered. While I laud and admire the designer of Bitcoin, Satoshi Nakamoto, it's also shocking when I went back to read the 9-page Bitcion whitepaper. There were only details on how it would function technically, but **no mentions of the economic ramifications**. While this is not necessarily the job of a programmer, it's definitely important to understand.
+Any technology invented, when accessible, has real-world impacts that need to be carefully considered. While I laud and admire the designer of Bitcoin, Satoshi Nakamoto, it's also shocking when I went back to read the 9-page Bitcoin whitepaper. There were only details on how it would function technically, but **no mentions of the economic ramifications**. While this is not necessarily the job of a programmer, it's definitely important to understand.
 
 ### Putting the Disciplinary in Multi-Disciplinary
 
@@ -70,8 +71,8 @@ More importantly, we learnt about what it means to collaborate in a multi-discip
 
 Multi-disciplinary collaboration is not just putting two people together, but putting two people with backgrounds so different that **new meaning can be created**. The ensuing discussion doesn't just have breadth, but also depth.
 
-This idea deeply reminds me of [Edelman's Theory of Neuronal Group Selection](/posts/brain-differentiation-integration). Firstly, there must be differentiation/ specialisation. Then, there must be integration/ communication between different specialisations. As a whole, this results in the system having the **highest entropy, or the most amount of information**.
+This idea deeply reminds me of [Edelman's Theory of Neuronal Group Selection](/posts/brain-differentiation-integration). Firstly, there must be differentiation/ specialisation. Then, there must be integration/ communication between different specialisations. As a whole, this results in the system having the **highest entropy**, or the most amount of information that can be gained from it.
 
 ## Remarks
 
-Our slides can be found [here](/bitcoin.pdf).
+Our slides can be found [here](/docs/bitcoin.pdf).

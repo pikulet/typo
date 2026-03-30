@@ -1,8 +1,8 @@
 ---
 title: Poker AI Agent
 date: "2019-05-02"
-toc: true
 showTags: true
+math: true
 slug: "poker-agent"
 tags:
 - "artificial intelligence"
@@ -26,9 +26,11 @@ Given the large complexity of poker, we need to apply abstractions to make it fe
 
 **Card Isomorphism**
 
-In poker, the suits of the card do not matter much. Having a King of Hearts with Four of Clubs is almost the same as having a King of Spades and a Four of Diamonds. Hence, the initial hand size of two can be stored in a table of size `13 x 13 = 169` instead of `50 choose 2 = 1326`.
+In poker, the suits of the card do not matter much, and are isomorphic to each other. Having a King of Hearts with Four of Clubs is exactly the same as having a King of Spades and a Four of Diamonds. It only matters if the suit of the two cards matches or not.
 
-![poker states](https://upload.wikimedia.org/wikipedia/commons/4/4a/Sklansky_Texas_Holdem_Starting_Hand_Strategies.JPG)
+Hence, the initial hand size of two can be stored in a table of size `13 x 13 = 169` instead of $\binom{52}{2} = 1326$.
+
+![Sklansky simplified poker states](/media/poker-sklansky.jpeg)
 
 Card isomorphism is demonstrated in the photo above. A suited hand means that both cards belong to the same suit, offering a higher chance of completing a Flush.
 
@@ -37,6 +39,8 @@ Card isomorphism is demonstrated in the photo above. A suited hand means that bo
 Card isomorphism is insufficient to reduce the size of the game state space, so card bucketing is used. 
 
 Instead of considering the many possible hands, we simply considered **5 buckets of cards (Very Strong, Strong, Average, Weak, Very Weak)**. Again, it does not really matter whether you have two Jacks and a seven or two Queens and a five. 
+
+![Monte Carlo Bucketing](/media/poker-bucketing.png)
 
 We used card win rate as the bucket key. Given a hand, we can estimate its winrate. We then allocate it a bucket depending on the winrate value.
 
@@ -48,7 +52,7 @@ We randomly generated 1000 possible hands. For each hand, we ran them through a 
 
 > This section aims to model player strategies in poker.
 
-Poker is fundamentally a game about bluff. We can win with the worst hands if we are able to make our opponents think we have a good hand.
+Poker is fundamentally a game of bluff. We can win with the worst hands if we are able to make our opponents think we have a good hand.
 
 **Aggressiveness**
 
@@ -66,22 +70,26 @@ The poker agent can't read its opponents' *"poker face"*, but it can use past pl
 
 Note that in the engine (as in regular poker), we do not know the opponent's hand when either player folds. However, in situations where we know the opponent's hand, we may use that in better predicting the opponent's bluff strategies.
 
-### Importance of Random Behaviour
+### Importance of Unpredictable Behaviour
 
-A predictable player would be easily countered. Instead of having determinate actions to take, our agent has a 3-tuple of probability that each action (raise, call, fold) would be played.
+A predictable player would be easily countered. Instead of having determinate actions to take, our agent has a 3-tuple of probabilities that each action (raise, call, fold) would be played.
+
+![Probabilistic Output](/media/poker-agent-output.png)
 
 For instance, (0.8, 0.1, 0.1) means that the agent raises with probability 80%, calls with probability 10% and folds with probability 10%. With the exact same hand, our poker agent would not take the same action every time. 
 
 This strategy is especially important with just two cards on hand, since there are only `169` states after applying card isomorphism. With sufficient games, it is not hard to predict a poker agent's behaviour for each of those states. For instance, we might not always fold even with the weakest possible hand. Similarly, we might not always raise with the strongest possible hand (we could just call).
 
+![Agent Architecture Pipeline](/media/poker-agent-pipeline.svg)
+
 ### Aggregating the Data into an Agent
 
-The simplest agent would just put all these values into a **linear combination** and optimise the weights. We were adventurous and wanted to evaluate the effectiveness of two learning techniques - **Counter-Factual Regret Minimisation (CFR Method)** and &&**Deep-Q Network Learning (DQN)**.
+The simplest agent would just put all these values into a **linear combination** and optimise the weights. We were adventurous and wanted to evaluate the effectiveness of two learning techniques - **Counter-Factual Regret Minimisation (CFR Method)** and **Deep-Q Network Learning (DQN)**.
 
 A CFR agent plays multiple games, and **observes its regret for different actions**. That is, given it had a bad hand, raised, and lost, it will regret raising at a bad hand. The agent then adjusts the probability for the actions, lowering the raise probability and increasing the fold probability.
 
 In the long term, the agent wants to minimise the regret across all actions.
-However, CFR agents take very long to train. There are multiple game states and it takes **too long to reach the equilibrium state**.
+However, CFR agents take a very long time to train. There are multiple game states and it takes **too long to reach the equilibrium state**.
 
 We then turned to the DQN methodology. The paradigm of DQNs parallels CFR agents: each action has an output value mapped to it. The results take a much faster time to approach equilibrium, which was favourable given our lack of training resources.
 
@@ -89,7 +97,7 @@ We then turned to the DQN methodology. The paradigm of DQNs parallels CFR agents
 
 Developing a complex poker agent was definitely fun, and let me understand more about artificial intelligence. What does it really mean for a machine to be able to make decisions? What are the implications on human society?
 
-A small aside, suppose that we managed to train and agent that could win humans at poker 90% of the time (we didn't actually achieve this feat). Does that AI *know* how to play poker? This thought is precisely the **Chinese Room Argument** in the philosophy of artificial intelligence.
+A small aside, suppose that we managed to train an agent that could win humans at poker 90% of the time (we didn't actually achieve this feat). Does that AI *know* how to play poker? What does it mean to be intelligent? This thought is precisely the **Chinese Room Argument** in the philosophy of artificial intelligence.
 
 A lot of our work was based on the exceptional work at the [University of Alberta Computer Poker Research Group](https://poker.cs.ualberta.ca/). Do check out their work!
 

@@ -33,19 +33,19 @@ Over the span of the next few semesters, I took many classes in school. Indubita
 
 *There is a wealth of resources on programming projects. However, they would often feature the same few projects that don’t have any real-life usefulness to me.*
 
-I found myself frequently googling for “best programming side projects” that I could do, but these lists would only contain cookie-cutter project ideas like BMI calculators and to-do lists. Nothing that piques my interest. Clearly, it is not skills alone that are lacking – I was now in an entirely opposite position, where I had the skills but no motivation to start projects.
+I found myself frequently googling for “best programming side projects” that I could do, but these lists would only contain cookie-cutter project ideas like BMI calculators and to-do lists. Nothing that piqued my interest. Clearly, it is not skills alone that are lacking – I was now in an entirely opposite position, where I had the skills but no motivation to start projects.
 
 ## The Turning Point
 
-Later in my sophomore year, one my modules required us to work on a search engine for legal documents. With my group of enthusiastic friends, we quickly completed the baseline project requirements, which would have given us close to a full score on the project.
+Later in my sophomore year, one of my modules required us to work on a search engine for legal documents. With my group of enthusiastic friends, we quickly completed the baseline project requirements, which would have given us close to a full score on the project.
 
 With additional time on our hands, we then worked on the optional open-ended component, which required us to propose and build extensions to the baseline project. Eventually, our projects would be sent to a Legal Tech company (Intellex), and the company could opt to buy our work. Motivated about the real-world impact of our work, we set off doing in-depth research on search engines. I implemented the indexing system of the [project](https://github.com/pikulet/intellex), which would use auxiliary factors like the court type, country and date to decide on a legal document's relevance. In the end, I left the module with a very comprehensive understanding of the cogs that turn search engines.
 
 Unfortunately, for many employers, projects that stem from a school module are not valued highly because they do not reflect the independence and creativity of a side project. Yet, for me, it is precisely because the project was an extension of assigned work that my learning was enhanced. I was able to tinker in a semi-structured manner, building on the big ideas learnt in lectures and the hands-on experience I had with the baseline project.
 
-I learnt a lot more technical skills in this school project than the summer side project, even though this project only spanned a shorter time. For a novice programmer where there was simply too much I didn’t know that I didn’t know, a structured exploration was more beneficial to my growth. Looking back, I’m thankful I didn’t just stop at the baseline project and choose to spend my free time on another side project instead.
+I learnt a lot more technical skills in this school project than the summer side project, even though this project only spanned a shorter time. For a novice programmer, where there was simply too much I didn’t know that I didn’t know, a structured exploration was more beneficial to my growth. Looking back, I’m thankful I didn’t just stop at the baseline project and choose to spend my free time on another side project instead.
 
-Working on this school project made me understand how well I took to semi-structured learning. I realised my approach to side projects, could be more structured. Instead of looking at guided projects as boring and useless, I started to value their importance in the learning process. This realisation made me take a drastic turn in my approach to side projects – instead of waiting for an interesting project, I went through the hard basics. Cookie-cutter projects were my go-to for awhile, and I would religiously follow online tutorials on Youtube to make replica applications in a step-by-step manner.
+Working on this school project made me understand how well I took to semi-structured learning. I realised my approach to side projects could be more structured. Instead of looking at guided projects as boring and useless, I started to value their importance in the learning process. This realisation made me take a drastic turn in my approach to side projects – instead of waiting for an interesting project, I went through the hard basics. Cookie-cutter projects were my go-to for a while, and I would religiously follow online tutorials on Youtube to make replica applications in a step-by-step manner.
 
 Gradually, as I grew more confident, I was able to infuse my projects with my own style. Last year, I had to prepare for an interview at GovTech by creating a URL shortener project. Armed with hands-on knowledge in Python and Web Applications, I was able to navigate my way through a tutorial for a personal blog forum. I selectively followed the blog post tutorial to create the URL shortener, using a new technology I had just picked up over the weekend.
 
@@ -59,7 +59,7 @@ Gradually, as I grew more confident, I was able to infuse my projects with my ow
 
 The project was a personal breakthrough and not only because I had grasped the motion of working on side projects. The URL shortener included elements I had never learnt in school, such as a database and router. This achievement represented a milestone of no longer having to rely on structured learning for programming projects. Overall, my journey in juggling classroom learning and side projects has not only taught me technical skills, but also corrected my misguided ideas on learning how to learn.
 
-## Moving Forward: The narrative of Technology in my Life
+## Moving Forward: The narrative of Technology in my life
 
 More recently, I took another leap forth and created a product that is not available anywhere else on the internet, creating a full-fledged word game from scratch.
 

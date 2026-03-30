@@ -1,7 +1,6 @@
 ---
 title: The killswitch in Wannacry
 date: "2021-08-30"
-toc: true
 showTags: true
 slug: "wannacry-malware-analysis"
 tags:
@@ -9,7 +8,7 @@ tags:
 summary: "Basic analysis techniques, and an example of the killswitch"
 ---
 
-[Wannacry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack) is a well-known ransomware, known to have locked away **millions** of precious photographs and important documents. The ransomware will then request for a certain amount of bitcoin before decrypting your personal files. This post shares about the killswitch mechanism in Wannacry. 
+[Wannacry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack) is a well-known ransomware, known to have locked away **millions** of precious photographs and important documents. The ransomware will then request a certain amount of bitcoin before decrypting your personal files. This post discusses the killswitch mechanism in Wannacry. 
 
 > This analysis project was a collaboration between Jonathan Cheng and me in Oct - Dec 2020.
 
@@ -21,7 +20,7 @@ So, given an unknown file the first thing to do is to **place it in a sandboxed 
 
 Now, at this point you might think "Oh, perhaps changing some compile options and strings can change the entire binary's hash". Well, VirusTotal is intelligent enough to compare not just the hash, but also certain code sections. It is especially alert to obfuscating code sections commonly used by malware, such as `IsDebuggerPresent`, which prevents a malware from being debugged easily. If you're interested in such obfuscation techniques, I've created a simple repository of [techniques that I previously studied](https://github.com/pikulet/anti-debugging).
 
-Anyhow, it's not particularly interesting for reverse engineers to look at VirusTotal's response. Yes we know it's a malware, but how does it work? We then take a snapshot of it's key information using **PEStudio**, **ResourceHacker** and **HashCalc**. These tools break down the Portable Executable (PE) format into easily-comprehensible sections and resources that will help us understand how the instruction pointer changes during execution. Again, nothing interesting here but this is basic information used when analysts share information with each other. In reality, there are multiple versions of Wannacry being circulated and we want to pinpoint an exact binary type when discussing its behaviour. 
+Anyhow, it's not particularly interesting for reverse engineers to look at VirusTotal's response. Yes we know it's a malware, but how does it work? We then take a snapshot of its key information using **PEStudio**, **ResourceHacker** and **HashCalc**. These tools break down the Portable Executable (PE) format into easily comprehensible sections and resources that will help us understand how the instruction pointer changes during execution. Again, nothing interesting here but this is basic information used when analysts share information with each other. In reality, there are multiple versions of Wannacry being circulated and we want to pinpoint an exact binary type when discussing its behaviour. 
 
 Next, would be analysing its behaviour. It would be ideal if we could map out its entire control flow, but doing that from a binary is extremely difficult, even with the help of **[IDAPro](https://www.hex-rays.com/ida-pro/)** or **[Ghidra](https://ghidra-sre.org/)**, which help to **disassemble and decompile the binary code** to very primitive source code. 
 
@@ -35,11 +34,17 @@ We always check through all the strings in the binary because strings are the mo
 
 ![killswitch-url](/media/killswitch-2.png)
 
-The result of visiting the domain is tested. If the domain is alive and the malware can connect to the site, the return value to `InternetOpenUrl` (stored in the `eax` and then `edi` registers) is 0. Then, the `jnz` jump is taken.
+The result of visiting the domain is tested. If the domain is alive and the malware can connect to the site, the return value from `InternetOpenUrl` (stored in the `eax` and then `edi` registers) is 1. Then, the `jnz` jump (jump-not-zero) is taken.
 
 ![killswitch-loop](/media/killswitch-1.png) 
 
-When the URL can be visited, the malicious payload is not executed. Currently, this URL has been **sinkholed** by [KryptosLogic](https://techcrunch.com/2019/07/08/the-wannacry-sinkhole/). This means that any attempt to connect to that domain will be falsely routed to a site put up by KryptosLogic. In effect, it means that the malware trying to access the domain will be successful, preventing millions of malware instances from executing the payload. 
+When the URL can be visited, the malicious payload is not executed. 
+
+Currently, this URL has been **sinkholed** by [KryptosLogic](https://techcrunch.com/2019/07/08/the-wannacry-sinkhole/). This means that any attempt to connect to that domain will be falsely routed to a site put up by KryptosLogic. In effect, it means that the malware trying to access the domain will be successful, preventing millions of malware instances from executing the payload.
+
+![WannaCry Sinkhole Mechanism](/media/wannacry-sinkhole-mechanism.svg)
+
+![Wannacry sinkhole](/media/wannacry-sinkhole.png)
 
 In the present state of affairs, many computers have already been infected by Wannacry, saved by the lifeline of being able to reach the killswitch sinkhole. 
 
@@ -49,11 +54,10 @@ Thinking ahead, how long can we rely on the goodwill of a company to keep that s
 
 There are [many competing theories](https://www.quora.com/Why-would-WannaCry-have-a-built-in-kill-switch-based-on-a-web-domain) behind this, and the reality is probably a combination of many reasons. Seriously, you can dive into a rabbithole reading up about possible reasons for a killswitch, including
 
-- **Sandbox evasion**. Most user machines would not have been able to visit the non-existent website, whereas virtual machines that emulate a network would pass that check. Then, the malware would not be able to run in VMs. I don't find this explanation likely because there are multiple more effective VM-detection techniques rather than a killswitch that would nullify all their efforts.
-- **Used in development**, to prevent the worm from spreading to their own machines during the testing process. Also unlikely that someone would forget to release a debugging code for two whole years after the killswitch was discovered.
+- **Sandbox evasion**. Most user machines would not have been able to visit the non-existent website, whereas virtual machines that emulate a network would pass that check. (This assumes that virtualised environments always successfully return mock data for all outbound connections.) Then, the malware would not be able to run in VMs. I don't find this explanation likely because there are multiple more effective VM-detection techniques rather than a killswitch that would nullify all their efforts.
+- **Used in development**, to prevent the worm from spreading to their own machines during the testing process. Also unlikely that someone would forget to remove a section debugging code for two whole years after the killswitch was discovered.
 - **Failsafe**. The malware could have unintended consequences like crashing the entire host machines instead of merely encrypting the files, giving the hackers no real benefits.
 
 ## Remarks
 
-I warmly invite you to dip your hands into taking apart Wannacry, and share anything interesting with me. Our full report is found [here](/wannacry-report.pdf).
-
+I warmly invite you to dip your hands into taking apart Wannacry, and share anything interesting with me. Our full report is found [here](/docs/wannacry-report.pdf).

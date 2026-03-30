@@ -11,7 +11,7 @@ summary: "Two angles of the same project. Part 3 of the Reflection series."
 
 As an introverted person, having the space to focus on challenging problems was ideal. This solitary aspect of programming drew me to Computer Science. I recall my second semester in NUS, where my friends would frequently meet up in the lounge to discuss the assigned programming problems. I would often reject their invitations and stay alone in my room to work on the problems, believing that it was important to do the work myself so that I would be able to learn.
 
-Yet, Computer Science is more than just solving small problems alone. There is often a need to work with multitude of people with different expertise to put together the large-scale systems that we see today.
+Yet, Computer Science is more than just solving small problems alone. There is often a need to work with a multitude of people with different expertise to put together the large-scale systems that we see today.
 
 ## Separation of Concerns
 
@@ -29,7 +29,7 @@ One of my most memorable projects in NUS involved a hotel management application
 
 ![CS2103 Review Received](/media/usr-p3-review-recv.png)
 
-*A review comment I received. My teammate is suggesting me to combine lines 21 and 22 together. The intended code was sb.append(LogInCommad.COMMAND_WORD).append(“ “).*
+*A review comment I received. My teammate is suggesting me to combine lines 21 and 22 together. The intended code was sb.append(LogInCommand.COMMAND_WORD).append(“ “).*
 
 ![CS2103 Review Given](/media/usr-p3-review-gave.png)
 
@@ -37,7 +37,7 @@ One of my most memorable projects in NUS involved a hotel management application
 
 At times, the changes suggested can be rather subjective, requiring a balance between readability and functionality. I got frustrated at receiving these comments, but was even more frustrated that I felt the need to give such comments. By following the SoC principle, adhering to the interface definitions is the only convention a person really needs to follow. If our work was truly isolated, does a small thing done in one person’s code matter in the grand scheme of the project?
 
-## Learning from how our Brain works
+## Learning from how our brain works
 
 This frustration already hinted that there were some problems with the way I was interpreting the software engineering principle. I was not able to pinpoint what my misconception was, until I took a USP module on perception. In the class, we learnt about how various parts of our body worked together to enable us to see the world around us. One of the interesting theories we talked about was Edelman’s Theory of Neuronal Group Selection (TNGS).
 
@@ -61,17 +61,17 @@ There seems to be an apparent conflict between these two ideas, where Edelman’
 
 *List of features in the hotel management application. The highlighted features were done by me. In the project, we allocated the work based on feature.*
 
-On their own, the features we developed were isolated. It was possible to remove any feature without impacting the others. On their own, the components of the software were isolated and could only interact with each other via limited interfaces. However, the nature of the project was not isolated at all. The tables below illustrates this idea.
+On their own, the features we developed were isolated. It was possible to remove any feature without impacting the others. On their own, the components of the software were isolated and could only interact with each other via limited interfaces. However, the nature of the project was not isolated at all. The tables below illustrate this idea.
 
 ![Visualisation of Project (Before)](/media/usr-p3-t1.png)
 
-Relation between components and features in a software project. Initially, I was mentally structuring the project as vertical silos, where each of us were working on our own feature.
+Relation between components and features in a software project. Initially, I was mentally structuring the project as vertical silos, where each of us was working on our own feature.
 
 ![Visualisation of Project (After)](/media/usr-p3-t2.png)
 
 However, I could view the project in another manner - horizontally. Regardless of the feature being developed, there was a need to work on the various software components.
 
-I had only saw the vertical silos of the project, where each of us were working on different features. However, I failed to see how we were connected when viewing the project horizontally: we were working on the same components. Separation of Concerns was a principle arising from software architecture not project management. It was meant to apply to components (UI, Logic, Model, Storage) and not features (done by different people).
+I had only seen the vertical silos of the project, where each of us was working on different features. However, I failed to see how we were connected when viewing the project horizontally: we were working on the same components. Separation of Concerns was a principle arising from software architecture, not project management. It was meant to apply to components (UI, Logic, Model, Storage) and not features (done by different people).
 
 In a software project, cohesiveness is important to ensure that we do not modify the components in a way that affects other users. Even when we were deciding on what features we wanted to develop, we had to ensure that our features were complementary with each other. The review process, while seemingly trivial, was important in enforcing code conventions and a consistent style across the whole project. This way, our code remains readable and understandable to everyone in the team, keeping our work open to feedback from each other.
 
