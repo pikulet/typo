@@ -116,6 +116,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="chopsticks"
   year="2021"
   tags="game"
+  images="/media/chopsticks-graph.svg"
   link="https://github.com/pikulet/chopsticks"
   description="Game-theoretic analysis of the childhood game Chopsticks. Builds a game state graph to prove that optimal play always results in a perpetual tie. (It's impossible to win unless your opponent made a mistake.)"
 >}}
