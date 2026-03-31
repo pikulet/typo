@@ -1,24 +1,18 @@
 /* Project cards grid */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: start;
-  gap: 0.75rem;
+  columns: 2;
+  column-gap: 0.75rem;
   margin-top: 1.5rem;
 }
 
-.projects-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+.projects-grid .project-card {
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
 }
 
 @media (max-width: 600px) {
   .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .projects-col {
-    display: contents;
+    columns: 1;
   }
 }
 

@@ -18,6 +18,37 @@
 {{- if not (.Page.Scratch.Get "carouselJsLoaded") }}
 {{- .Page.Scratch.Set "carouselJsLoaded" true }}
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var grid = document.querySelector('.projects-grid');
+  if (!grid) return;
+
+  var cards = Array.from(grid.querySelectorAll(':scope > .project-card'));
+  if (cards.length < 2) return;
+
+  // Estimate each card's height
+  var items = cards.map(function(card) {
+    var hasImage = card.querySelector('.project-carousel') !== null;
+    var desc = card.querySelector('.project-desc');
+    var descLen = desc ? desc.textContent.length : 0;
+    return { card: card, h: (hasImage ? 200 : 0) + 60 + descLen * 0.4 };
+  });
+
+  // Greedy assign to two columns
+  var col1 = [], col2 = [], h1 = 0, h2 = 0;
+  items.forEach(function(item) {
+    if (h1 <= h2) { col1.push(item); h1 += item.h; }
+    else { col2.push(item); h2 += item.h; }
+  });
+
+  // CSS columns fills top-to-bottom, left column first.
+  // Reorder DOM: left column items first, then right column items.
+  var ordered = col1.concat(col2);
+  ordered.forEach(function(item) {
+    grid.appendChild(item.card);
+  });
+});
+</script>
+<script>
 function carouselMove(id, dir) {
   var carousel = document.getElementById(id);
   if (!carousel) return;
