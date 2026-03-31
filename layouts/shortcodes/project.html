@@ -15,12 +15,46 @@
 {{- end -}}
 {{- $id := printf "proj-%s" ($title | urlize) -}}
 
+{{- if not (.Page.Scratch.Get "carouselJsLoaded") }}
+{{- .Page.Scratch.Set "carouselJsLoaded" true }}
+<script>
+function carouselMove(id, dir) {
+  var carousel = document.getElementById(id);
+  if (!carousel) return;
+  var track = carousel.querySelector('.carousel-track');
+  var slides = track.querySelectorAll('.carousel-slide');
+  var dots = carousel.querySelectorAll('.carousel-dot');
+  var current = -1;
+  for (var i = 0; i < slides.length; i++) {
+    if (slides[i].classList.contains('active')) { current = i; break; }
+  }
+  if (current === -1) current = 0;
+  slides[current].classList.remove('active');
+  if (dots[current]) dots[current].classList.remove('active');
+  current = (current + dir + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  if (dots[current]) dots[current].classList.add('active');
+}
+function carouselGoto(id, index) {
+  var carousel = document.getElementById(id);
+  if (!carousel) return;
+  var slides = carousel.querySelectorAll('.carousel-slide');
+  var dots = carousel.querySelectorAll('.carousel-dot');
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].classList.toggle('active', i === index);
+  }
+  for (var i = 0; i < dots.length; i++) {
+    dots[i].classList.toggle('active', i === index);
+  }
+}
+</script>
+{{- end }}
 <div class="project-card">
   {{- if $images }}
   <div class="project-carousel" id="{{ $id }}-carousel">
     <div class="carousel-track">
-      {{- range $images }}
-      <img src="{{ strings.TrimSpace . }}" alt="{{ $title }}" class="carousel-slide">
+      {{- range $i, $img := $images }}
+      <img src="{{ strings.TrimSpace $img }}" alt="{{ $title }}" class="carousel-slide{{ if eq $i 0 }} active{{ end }}">
       {{- end }}
     </div>
     {{- if gt (len $images) 1 }}

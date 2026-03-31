@@ -20,7 +20,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="anti-debugging"
   year="2021"
   star="true"
-  tags="system, open-sourced"
+  tags="system"
   link="https://github.com/pikulet/anti-debugging"
   description="Windows malware anti-analysis techniques, including self-debugging and anti-virtualisation. Educational reference for reverse engineers."
 >}}
@@ -29,6 +29,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="csessions"
   year="2026"
   tags="ai, system"
+  link="https://github.com/pikulet/csessions"
   images="/media/csessions-demo.png"
   description="xbar plugin to monitor active Claude Code sessions from the macOS menu bar."
 >}}
@@ -36,7 +37,6 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
 {{< project
   title="intellex"
   year="2019"
-  tags="system"
   link="https://github.com/pikulet/intellex"
   description="Legal document search engine: tf-idf, positional phrase indexing, Boolean queries, and Rocchio relevance feedback."
 >}}
@@ -52,6 +52,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
 {{< project
   title="halp"
   year="2018"
+  link="https://github.com/pikulet/orbital-halp"
   description="Enables NUS students to use IVLE login to get a queue number at the school clinic. Shows the estimated wait time as well. Without this, you had to take a queue number and physically wait at the clinic for an hour."
 >}}
 
@@ -59,6 +60,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="pox"
   year="2020"
   tags="system"
+  link="https://gist.github.com/pikulet/e8de2664e01be4542b810af2e2de833f"
   description="Software-defined networking: Programmed for L2/L3 (switch/router): self-learning switch, firewall, variable QoS"
 >}}
 
@@ -83,7 +85,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   year="2021"
   tags="game"
   link="https://github.com/pikulet/phenn-pyxel"
-  images="/media/phenn-pyxel.png, /media/phenn-title.png, /media/phenn-gameplay.png"
+  images="/media/phenn-pyxel.png, /media/phenn-gameplay.png"
   description="Retro word game (256×256 pixels!) in Python and Pyxel. Ieripsnd by our atiliby to qlkciuy raed selbmarcd wdros wettirn tihs way."
 >}}
 
@@ -100,6 +102,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="5amcrook"
   year="2020"
   tags="fullstack"
+  link="https://github.com/pikulet/5amcrook"
   description="Satirical Animal Crossing news site with weekly crossword puzzles. Built during COVID for the SG Animal Crossing community."
 >}}
 
@@ -109,7 +112,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="pose estimator"
   year="2019"
   star="true"
-  tags="system, fullstack"
+  tags="ai"
   link="https://github.com/pikulet/til-ai-camp"
   images="/media/pose-cnn-layers.png, /media/pose-trf-learning.png"
   description="Pose estimator trained in Tensorflow/Keras using transfer learning and the ensemble method. Won 6th place (Merit Award) out of 50+ teams at DSTA TIL AI Hack 2019."
@@ -120,6 +123,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   year="2019"
   star="true"
   tags="system"
+  link="https://github.com/pikulet/encryption-oracle-padding-oracle"
   description="Attack on PKCS5/7 Padding. By knowing if a given ciphertext is valid, we can trace backwards the original plaintext. We can also use this to generate ciphertexts for new plaintexts."
 >}}
 
@@ -127,6 +131,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="nook"
   year="2026"
   tags="fullstack"
+  link="https://github.com/pikulet/nook"
   description="Cozy Chrome homepage extension."
 >}}
 
@@ -151,6 +156,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
 {{< project
   title="dynalite"
   year="2021"
+  link="https://github.com/pikulet/dynalite"
   images="/media/dynalite.png"
   description="Uses an RPi+COAP protocol with light sensors. Detects and displays if a room is occupied in real-time, more accurate than room booking systems."
 >}}
@@ -159,6 +165,7 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
   title="poker agent"
   year="2019"
   tags="ai"
+  link="https://github.com/pikulet/poker"
   description="AI Agent to play limit poker."
 >}}
 

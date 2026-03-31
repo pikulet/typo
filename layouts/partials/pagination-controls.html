@@ -1,0 +1,23 @@
+{{ if gt .TotalPages 1 }}
+<div class="pagination">
+    <div class="pagination-control">
+        {{ if .HasPrev }}
+        <a href="{{ .Prev.URL | absURL }}#posts">
+            prev
+        </a>
+        {{ end }}
+    </div>
+    <div class="page-number">
+        <p>
+            {{ .PageNumber }}/{{ .TotalPages }}
+        </p>
+    </div>
+    <div class="pagination-control">
+        {{ if .HasNext }}
+        <a href="{{ .Next.URL | absURL }}#posts">
+            next
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
