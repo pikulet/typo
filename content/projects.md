@@ -73,9 +73,11 @@ More on [GitHub](https://github.com/pikulet). I build tons of useless stuff for 
 {{< project
   title="nook"
   year="2026"
+  star="true"
   tags="fullstack"
   link="https://github.com/pikulet/nook"
-  description="Cozy Chrome homepage extension."
+  images="/media/nook-forest.png, /media/nook-nightsky.png"
+  description="Cosy pixel art Chrome extension that replaces your new tab with a calm productivity corner. Sticky notes, checklists, ambient music, customisable backgrounds, and 20 draggable decorations."
 >}}
 
 {{< project
